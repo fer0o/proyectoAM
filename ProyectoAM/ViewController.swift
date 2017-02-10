@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let Prueba: Int = 15
+    let Prueba: Int = 10
     
 
     override func viewDidLoad() {
