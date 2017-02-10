@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					2CA7F6EA1E4D9E0200CF3146 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = P28U79D7KY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.famc.ProyectoAM;
@@ -272,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.famc.ProyectoAM;
