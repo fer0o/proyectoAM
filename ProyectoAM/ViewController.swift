@@ -10,15 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let Prueba: Int = 10
+    var username = NSUserName()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        print ("otro cambio")
     }
 
     override func didReceiveMemoryWarning() {
