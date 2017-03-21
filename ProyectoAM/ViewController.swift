@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         if(!isUserLoggedIn){
             
             self.performSegue(withIdentifier: "loginView", sender: self)
+            //print maldito git
         }
         
         
