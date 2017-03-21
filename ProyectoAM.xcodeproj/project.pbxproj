@@ -12,6 +12,14 @@
 		2CA7F6F41E4D9E0900CF3146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F21E4D9E0900CF3146 /* Main.storyboard */; };
 		2CA7F6F61E4D9E0A00CF3146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */; };
 		2CA7F6F91E4D9E0A00CF3146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */; };
+		76C3E0331E809CCD0077E36E /* Puente.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E0321E809CCD0077E36E /* Puente.m */; };
+		76C3E0361E809CF60077E36E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C3E0351E809CF60077E36E /* libsqlite3.tbd */; };
+		76C3E0381E809D6B0077E36E /* Agendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E0371E809D6B0077E36E /* Agendar.swift */; };
+		76C3E03A1E80B27A0077E36E /* CitasTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E0391E80B27A0077E36E /* CitasTV.swift */; };
+		76C3E03C1E80B2C70077E36E /* ContactoDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E03B1E80B2C70077E36E /* ContactoDoc.swift */; };
+		76C3E03E1E80D1640077E36E /* CitasDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E03D1E80D1640077E36E /* CitasDoc.swift */; };
+		76C3E0401E80D6950077E36E /* ContactoPac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E03F1E80D6950077E36E /* ContactoPac.swift */; };
+		76C3E0421E80DCCC0077E36E /* Historial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E0411E80DCCC0077E36E /* Historial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,15 @@
 		2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA7F6F81E4D9E0A00CF3146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76C3E0311E809CCD0077E36E /* ProyectoAM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProyectoAM-Bridging-Header.h"; sourceTree = "<group>"; };
+		76C3E0321E809CCD0077E36E /* Puente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puente.m; sourceTree = "<group>"; };
+		76C3E0351E809CF60077E36E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		76C3E0371E809D6B0077E36E /* Agendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agendar.swift; sourceTree = "<group>"; };
+		76C3E0391E80B27A0077E36E /* CitasTV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasTV.swift; sourceTree = "<group>"; };
+		76C3E03B1E80B2C70077E36E /* ContactoDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoDoc.swift; sourceTree = "<group>"; };
+		76C3E03D1E80D1640077E36E /* CitasDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasDoc.swift; sourceTree = "<group>"; };
+		76C3E03F1E80D6950077E36E /* ContactoPac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoPac.swift; sourceTree = "<group>"; };
+		76C3E0411E80DCCC0077E36E /* Historial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Historial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C3E0361E809CF60077E36E /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 			children = (
 				2CA7F6ED1E4D9E0900CF3146 /* ProyectoAM */,
 				2CA7F6EC1E4D9E0900CF3146 /* Products */,
+				76C3E0341E809CF60077E36E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +79,24 @@
 				2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */,
 				2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */,
 				2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */,
+				76C3E0321E809CCD0077E36E /* Puente.m */,
+				76C3E0311E809CCD0077E36E /* ProyectoAM-Bridging-Header.h */,
+				76C3E0371E809D6B0077E36E /* Agendar.swift */,
+				76C3E0391E80B27A0077E36E /* CitasTV.swift */,
+				76C3E03B1E80B2C70077E36E /* ContactoDoc.swift */,
+				76C3E03D1E80D1640077E36E /* CitasDoc.swift */,
+				76C3E03F1E80D6950077E36E /* ContactoPac.swift */,
+				76C3E0411E80DCCC0077E36E /* Historial.swift */,
 			);
 			path = ProyectoAM;
+			sourceTree = "<group>";
+		};
+		76C3E0341E809CF60077E36E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76C3E0351E809CF60077E36E /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +132,7 @@
 					2CA7F6EA1E4D9E0200CF3146 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = P28U79D7KY;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,8 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C3E03A1E80B27A0077E36E /* CitasTV.swift in Sources */,
 				2CA7F6F11E4D9E0900CF3146 /* ViewController.swift in Sources */,
 				2CA7F6EF1E4D9E0900CF3146 /* AppDelegate.swift in Sources */,
+				76C3E0421E80DCCC0077E36E /* Historial.swift in Sources */,
+				76C3E0401E80D6950077E36E /* ContactoPac.swift in Sources */,
+				76C3E0381E809D6B0077E36E /* Agendar.swift in Sources */,
+				76C3E0331E809CCD0077E36E /* Puente.m in Sources */,
+				76C3E03C1E80B2C70077E36E /* ContactoDoc.swift in Sources */,
+				76C3E03E1E80D1640077E36E /* CitasDoc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,11 +304,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.famc.ProyectoAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProyectoAM/ProyectoAM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,11 +320,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.famc.ProyectoAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProyectoAM/ProyectoAM-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +350,7 @@
 				2CA7F6FF1E4D9E0A00CF3146 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
