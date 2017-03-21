@@ -741,7 +741,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido al Consultorio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wv-2y-Mek">
-                                <rect key="frame" x="81" y="49" width="194" height="21"/>
+                                <rect key="frame" x="81" y="93" width="194" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -831,7 +831,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y9n-j7-BKm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L3y-Mb-LUK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="L3y-Mb-LUK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -850,6 +850,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="u8x-xz-ZnQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Jkb-Ux-TLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
