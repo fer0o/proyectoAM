@@ -540,10 +540,6 @@
                                     <segue destination="JiK-3A-dzb" kind="show" id="Bc3-ae-YW8"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interrogacion" translatesAutoresizingMaskIntoConstraints="NO" id="Drz-m5-9nI">
-                                <rect key="frame" x="117" y="121" width="125" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interrogacion" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-Yn-Xs9">
                                 <rect key="frame" x="117" y="261" width="125" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -771,7 +767,7 @@
         <image name="interrogacion" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="76g-rc-NE3"/>
+        <segue reference="Bc3-ae-YW8"/>
         <segue reference="Eiw-WV-414"/>
         <segue reference="Q1H-gJ-IiX"/>
         <segue reference="qTu-oh-cdW"/>
