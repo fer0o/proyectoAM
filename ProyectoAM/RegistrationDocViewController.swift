@@ -50,7 +50,7 @@ class RegistrationDocViewController: UIViewController {
             //despliega mensjae de no coinciden
             
             
-            displayMyAlertMessage(userMessage: " The passwords no coinciden ")
+            displayMyAlertMessage(userMessage: " Las contraseñas no coinciden ")
             return
         }
         UserDefaults.standard.setValue(userEmail, forKey: "user Email")
