@@ -6,7 +6,6 @@
 //  Copyright © 2017 Fernando Medellin Cuevas. All rights reserved.
 //
 
-//Prueba
 
 import UIKit
 
