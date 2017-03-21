@@ -636,7 +636,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vql-pW-U2t">
-                                <rect key="frame" x="108" y="449" width="159" height="63"/>
+                                <rect key="frame" x="108" y="436" width="159" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cerrar Sesión"/>
                                 <connections>
@@ -654,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNu-3E-0k4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5882" y="1540"/>
+            <point key="canvasLocation" x="3974" y="1567"/>
         </scene>
         <!--Login Doc View Controller-->
         <scene sceneID="vdw-Be-XUX">
@@ -729,7 +729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s48-0z-yeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3852" y="1540"/>
+            <point key="canvasLocation" x="4681" y="1567"/>
         </scene>
         <!--Registration Doc View Controller-->
         <scene sceneID="uGV-W0-ltZ">
@@ -983,7 +983,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido al Consultorio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wv-2y-Mek">
-                                <rect key="frame" x="81" y="93" width="194" height="21"/>
+                                <rect key="frame" x="81" y="49" width="194" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
