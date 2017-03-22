@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13D7B4337C48649A59BDE23E /* Pods_ProyectoAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA869C85EF971A4DC827B05 /* Pods_ProyectoAM.framework */; };
 		2A0A6AC71E82254500A79BBD /* Calendario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AC61E82254500A79BBD /* Calendario.swift */; };
 		2A0A6AC91E82268A00A79BBD /* FSCalendar in Resources */ = {isa = PBXBuildFile; fileRef = 2A0A6AC81E82268A00A79BBD /* FSCalendar */; };
 		2A0A6AEA1E8226C000A79BBD /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6ACB1E8226C000A79BBD /* FSCalendar.m */; };
@@ -25,6 +26,8 @@
 		2A0A6AF71E8226C000A79BBD /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AE51E8226C000A79BBD /* FSCalendarStickyHeader.m */; };
 		2A0A6AF81E8226C000A79BBD /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AE71E8226C000A79BBD /* FSCalendarTransitionCoordinator.m */; };
 		2A0A6AF91E8226C000A79BBD /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */; };
+		2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */; };
+		2C59DC4E1E82A0E20044C8EB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4D1E82A0E20044C8EB /* DataService.swift */; };
 		2CA7F6EF1E4D9E0900CF3146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */; };
 		2CA7F6F11E4D9E0900CF3146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */; };
 		2CA7F6F41E4D9E0900CF3146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F21E4D9E0900CF3146 /* Main.storyboard */; };
@@ -43,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29EA8996E819D90E2C34E0DB /* Pods-ProyectoAM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoAM.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProyectoAM/Pods-ProyectoAM.release.xcconfig"; sourceTree = "<group>"; };
 		2A0A6AC61E82254500A79BBD /* Calendario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendario.swift; sourceTree = "<group>"; };
 		2A0A6AC81E82268A00A79BBD /* FSCalendar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FSCalendar; sourceTree = "<group>"; };
 		2A0A6ACA1E8226C000A79BBD /* FSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSCalendar.h; path = FSCalendar/FSCalendar.h; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		2A0A6AE71E8226C000A79BBD /* FSCalendarTransitionCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCalendarTransitionCoordinator.m; path = FSCalendar/FSCalendarTransitionCoordinator.m; sourceTree = "<group>"; };
 		2A0A6AE81E8226C000A79BBD /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSCalendarWeekdayView.h; path = FSCalendar/FSCalendarWeekdayView.h; sourceTree = "<group>"; };
 		2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCalendarWeekdayView.m; path = FSCalendar/FSCalendarWeekdayView.m; sourceTree = "<group>"; };
+		2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C59DC4D1E82A0E20044C8EB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2CA7F6EB1E4D9E0900CF3146 /* ProyectoAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDocViewController.swift; sourceTree = "<group>"; };
 		2CF9FA781E81C81300541094 /* LoginDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDocViewController.swift; sourceTree = "<group>"; };
+		6CA869C85EF971A4DC827B05 /* Pods_ProyectoAM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoAM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C3E0311E809CCD0077E36E /* ProyectoAM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProyectoAM-Bridging-Header.h"; sourceTree = "<group>"; };
 		76C3E0321E809CCD0077E36E /* Puente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puente.m; sourceTree = "<group>"; };
 		76C3E0351E809CF60077E36E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -95,6 +102,7 @@
 		76C3E03D1E80D1640077E36E /* CitasDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasDoc.swift; sourceTree = "<group>"; };
 		76C3E03F1E80D6950077E36E /* ContactoPac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoPac.swift; sourceTree = "<group>"; };
 		76C3E0411E80DCCC0077E36E /* Historial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Historial.swift; sourceTree = "<group>"; };
+		A4E49293D783489DD881156D /* Pods-ProyectoAM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoAM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProyectoAM/Pods-ProyectoAM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76C3E0361E809CF60077E36E /* libsqlite3.tbd in Frameworks */,
+				13D7B4337C48649A59BDE23E /* Pods_ProyectoAM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +124,7 @@
 				2CA7F6ED1E4D9E0900CF3146 /* ProyectoAM */,
 				2CA7F6EC1E4D9E0900CF3146 /* Products */,
 				76C3E0341E809CF60077E36E /* Frameworks */,
+				E9574706979741CDB7C58A22 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +178,7 @@
 				2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */,
 				2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */,
 				2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */,
+				2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */,
 				76C3E0321E809CCD0077E36E /* Puente.m */,
 				76C3E0311E809CCD0077E36E /* ProyectoAM-Bridging-Header.h */,
 				76C3E0371E809D6B0077E36E /* Agendar.swift */,
@@ -179,6 +190,7 @@
 				2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */,
 				2CF9FA781E81C81300541094 /* LoginDocViewController.swift */,
 				2A0A6AC61E82254500A79BBD /* Calendario.swift */,
+				2C59DC4D1E82A0E20044C8EB /* DataService.swift */,
 			);
 			path = ProyectoAM;
 			sourceTree = "<group>";
@@ -187,8 +199,18 @@
 			isa = PBXGroup;
 			children = (
 				76C3E0351E809CF60077E36E /* libsqlite3.tbd */,
+				6CA869C85EF971A4DC827B05 /* Pods_ProyectoAM.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9574706979741CDB7C58A22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4E49293D783489DD881156D /* Pods-ProyectoAM.debug.xcconfig */,
+				29EA8996E819D90E2C34E0DB /* Pods-ProyectoAM.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CA7F6FD1E4D9E0A00CF3146 /* Build configuration list for PBXNativeTarget "ProyectoAM" */;
 			buildPhases = (
+				0DD3C952B0E3100DDE5E11A7 /* [CP] Check Pods Manifest.lock */,
 				2CA7F6E71E4D9E0200CF3146 /* Sources */,
 				2CA7F6E81E4D9E0200CF3146 /* Frameworks */,
 				2CA7F6E91E4D9E0200CF3146 /* Resources */,
+				A50167897AFC5A157FC920AC /* [CP] Embed Pods Frameworks */,
+				785FB0DA397725DD10C93EFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +279,61 @@
 			files = (
 				2CA7F6F91E4D9E0A00CF3146 /* LaunchScreen.storyboard in Resources */,
 				2A0A6AC91E82268A00A79BBD /* FSCalendar in Resources */,
+				2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */,
 				2CA7F6F61E4D9E0A00CF3146 /* Assets.xcassets in Resources */,
 				2CA7F6F41E4D9E0900CF3146 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DD3C952B0E3100DDE5E11A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		785FB0DA397725DD10C93EFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProyectoAM/Pods-ProyectoAM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A50167897AFC5A157FC920AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProyectoAM/Pods-ProyectoAM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CA7F6E71E4D9E0200CF3146 /* Sources */ = {
@@ -275,6 +349,7 @@
 				2A0A6AF91E8226C000A79BBD /* FSCalendarWeekdayView.m in Sources */,
 				2A0A6AF71E8226C000A79BBD /* FSCalendarStickyHeader.m in Sources */,
 				2A0A6AEA1E8226C000A79BBD /* FSCalendar.m in Sources */,
+				2C59DC4E1E82A0E20044C8EB /* DataService.swift in Sources */,
 				2CA7F6EF1E4D9E0900CF3146 /* AppDelegate.swift in Sources */,
 				76C3E0421E80DCCC0077E36E /* Historial.swift in Sources */,
 				2CF9FA791E81C81300541094 /* LoginDocViewController.swift in Sources */,
@@ -414,6 +489,7 @@
 		};
 		2CA7F6FE1E4D9E0A00CF3146 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E49293D783489DD881156D /* Pods-ProyectoAM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -430,6 +506,7 @@
 		};
 		2CA7F6FF1E4D9E0A00CF3146 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29EA8996E819D90E2C34E0DB /* Pods-ProyectoAM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

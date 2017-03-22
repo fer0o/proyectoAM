@@ -1,0 +1,6 @@
+framework module Pods_ProyectoAM {
+  umbrella header "Pods-ProyectoAM-umbrella.h"
+
+  export *
+  module * { export * }
+}
