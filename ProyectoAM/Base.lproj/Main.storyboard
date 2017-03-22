@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="obs-wg-2fB">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y9n-j7-BKm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Data Source-->
+        <scene sceneID="2DL-Wf-UNV">
+            <objects>
+                <viewController id="cNS-HQ-DHD" customClass="Calendario" customModule="ProyectoAM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wvi-sn-3mK"/>
+                        <viewControllerLayoutGuide type="bottom" id="fCk-pg-k8f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Myk-pI-UIU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrp-6u-kxS" customClass="FSCalendar">
+                                <rect key="frame" x="16" y="72" width="343" height="358"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cNS-HQ-DHD" id="qcq-Hh-eul"/>
+                                    <outlet property="delegate" destination="cNS-HQ-DHD" id="mPR-F3-W8d"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTL-iu-aMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2818.4000000000001" y="-834.33283358320841"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="uBG-Qw-twU">
             <objects>
@@ -29,7 +58,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWr-rZ-ZUJ">
-                                <rect key="frame" x="16" y="318" width="209" height="30"/>
+                                <rect key="frame" x="16" y="290" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Documentos de los Pacientes">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEF-q9-vqI">
-                                <rect key="frame" x="16" y="525" width="89" height="30"/>
+                                <rect key="frame" x="16" y="574" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Acerca De">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,13 +92,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="historial" translatesAutoresizingMaskIntoConstraints="NO" id="XE3-4z-ucH">
-                                <rect key="frame" x="227" y="287" width="132" height="93"/>
+                                <rect key="frame" x="227" y="259" width="132" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Información" translatesAutoresizingMaskIntoConstraints="NO" id="fO9-3j-bWA">
-                                <rect key="frame" x="227" y="490" width="132" height="101"/>
+                                <rect key="frame" x="227" y="539" width="132" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calendar-PNG-Image (1)" translatesAutoresizingMaskIntoConstraints="NO" id="ClI-4s-PA0">
+                                <rect key="frame" x="227" y="396" width="132" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyG-7U-Nw5">
+                                <rect key="frame" x="16" y="440" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calendario Citas">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cNS-HQ-DHD" kind="show" id="Ogq-1Y-EYq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -417,9 +460,6 @@
                                 <rect key="frame" x="108" y="148" width="159" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Doctor"/>
-                                <connections>
-                                    <segue destination="98y-OT-uYO" kind="show" id="euO-Fx-bzQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUD-ud-hya">
                                 <rect key="frame" x="108" y="369" width="159" height="63"/>
@@ -446,22 +486,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5D2-M6-bhw">
-                                <rect key="frame" x="149" y="20" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vql-pW-U2t">
                                 <rect key="frame" x="108" y="436" width="159" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cerrar Sesión"/>
                                 <connections>
-                                    <action selector="loginButtonT:" destination="98y-OT-uYO" eventType="touchUpInside" id="fpx-dX-q6z"/>
                                     <action selector="logout:" destination="Brx-yT-J5V" eventType="touchUpInside" id="sho-gh-bxY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyJ-AO-nu3">
+                                <rect key="frame" x="149" y="107" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -473,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNu-3E-0k4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3974" y="1567"/>
+            <point key="canvasLocation" x="3910" y="1782"/>
         </scene>
         <!--Login Doc View Controller-->
         <scene sceneID="vdw-Be-XUX">
@@ -531,8 +570,8 @@
                                     <segue destination="Hmh-Vc-bVJ" kind="presentation" identifier="registerView" id="dRV-mu-oec"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contraseña:l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYe-gg-GZH">
-                                <rect key="frame" x="16" y="213" width="97" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contraseña:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYe-gg-GZH">
+                                <rect key="frame" x="16" y="213" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -623,9 +662,6 @@
                                 <rect key="frame" x="108" y="509" width="159" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ya tengo una cuenta"/>
-                                <connections>
-                                    <segue destination="98y-OT-uYO" kind="showDetail" id="rQF-b1-df5"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -638,7 +674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tC-Gd-5TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4681" y="2297"/>
+            <point key="canvasLocation" x="4614" y="2357"/>
         </scene>
         <!--Historial-->
         <scene sceneID="Zca-gQ-XzH">
@@ -919,16 +955,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mre-QG-aTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="1539.5802098950526"/>
+            <point key="canvasLocation" x="3018" y="2011"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Calendar-PNG-Image (1)" width="1584" height="1584"/>
         <image name="Información" width="256" height="256"/>
         <image name="agenda" width="300" height="300"/>
         <image name="historial" width="1023" height="682"/>
         <image name="interrogacion" width="626" height="626"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="FUz-td-RM5"/>
-    </inferredMetricsTieBreakers>
 </document>

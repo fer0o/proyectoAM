@@ -49,7 +49,6 @@ class RegistrationDocViewController: UIViewController {
         if(userPassword != userRepeatPassword){
             //despliega mensjae de no coinciden
             
-            
             displayMyAlertMessage(userMessage: " Las contraseñas no coinciden ")
             return
         }
@@ -83,9 +82,6 @@ class RegistrationDocViewController: UIViewController {
         myAlert.addAction(okAction)
         
         self.present(myAlert, animated: true, completion: nil)
-
-
-        
         
     }
     

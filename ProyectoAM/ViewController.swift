@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var username = NSUserName()
+    //var username = NSUserName()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,25 +23,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
     override func viewDidAppear(_ animated: Bool) {
-        
         
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(!isUserLoggedIn){
-            
             self.performSegue(withIdentifier: "loginView", sender: self)
             //print el git esta muy malo 
         }
-        
-        
-        
-        
         self.performSegue(withIdentifier: "loginView", sender: self)
     }
-    
     
     @IBAction func logout(_ sender: AnyObject) {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
@@ -49,7 +39,4 @@ class ViewController: UIViewController {
         
         self.performSegue(withIdentifier: "loginView", sender: self)
     }
-
-
 }
-
