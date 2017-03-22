@@ -94,7 +94,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Iniciar"/>
                                 <connections>
-                                    <segue destination="JiK-3A-dzb" kind="show" id="8LI-Hb-1ug"/>
+                                    <segue destination="JTR-fa-7Zz" kind="show" id="8LI-Hb-1ug"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRW-aZ-Xar">
@@ -170,7 +170,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Regresar"/>
                                 <connections>
-                                    <segue destination="JiK-3A-dzb" kind="show" id="tEV-9s-9RT"/>
+                                    <segue destination="JTR-fa-7Zz" kind="show" id="tEV-9s-9RT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="217-P2-Ypj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="-1"/>
+            <point key="canvasLocation" x="2720.8000000000002" y="-1.3493253373313345"/>
         </scene>
         <!--Citas-->
         <scene sceneID="bcN-Uc-eBl">
@@ -313,7 +313,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Regresar"/>
                                 <connections>
-                                    <segue destination="JiK-3A-dzb" kind="show" id="Tar-kL-q7B"/>
+                                    <segue destination="JTR-fa-7Zz" kind="show" id="Tar-kL-q7B"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -499,7 +499,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Regresar"/>
                                 <connections>
-                                    <segue destination="JiK-3A-dzb" kind="show" id="xgD-GR-ISz"/>
+                                    <segue destination="JTR-fa-7Zz" kind="show" id="xgD-GR-ISz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fernando Ángel Medellín Cuevas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-lw-Isp">
@@ -572,7 +572,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Regresar"/>
                                 <connections>
-                                    <segue destination="JiK-3A-dzb" kind="show" id="gZb-Jd-2w5"/>
+                                    <segue destination="JTR-fa-7Zz" kind="show" id="gZb-Jd-2w5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -623,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToA-RX-GIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5645.6000000000004" y="536.58170914542734"/>
+            <point key="canvasLocation" x="6584.8000000000002" y="536.58170914542734"/>
         </scene>
         <!--Contacto Paciente-->
         <scene sceneID="8kw-Dw-ed1">
@@ -752,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NJ-pA-RDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4823" y="538"/>
+            <point key="canvasLocation" x="5760.8000000000002" y="537.48125937031489"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ERW-9u-kTc">
@@ -765,7 +765,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="JiK-3A-dzb" kind="relationship" relationship="rootViewController" id="n5o-7n-Eu8"/>
+                        <segue destination="JTR-fa-7Zz" kind="relationship" relationship="rootViewController" id="n5o-7n-Eu8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl3-sx-n7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -789,7 +789,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0J-gE-8YW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3527" y="-126"/>
+            <point key="canvasLocation" x="4464.8000000000002" y="-126.38680659670166"/>
         </scene>
         <!--Agregar Cita-->
         <scene sceneID="MBW-FT-yAV">
@@ -868,7 +868,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTl-Nt-nms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4873" y="-360"/>
+            <point key="canvasLocation" x="5812" y="-360.2698650674663"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QhN-LP-hp9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JTR-fa-7Zz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Inq-N2-saD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPP-rg-YAw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JiK-3A-dzb" kind="relationship" relationship="rootViewController" id="W4f-YD-3qP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Tg-d3-CgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.5999999999999" y="-1.3493253373313345"/>
         </scene>
     </scenes>
     <resources>
@@ -880,7 +899,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gZb-Jd-2w5"/>
-        <segue reference="njO-PF-dFU"/>
+        <segue reference="EyO-lW-54d"/>
         <segue reference="Fgz-pd-awG"/>
         <segue reference="gTt-r0-Lex"/>
         <segue reference="tSf-EE-clK"/>
