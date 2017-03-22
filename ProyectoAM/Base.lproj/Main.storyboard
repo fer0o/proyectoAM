@@ -45,6 +45,17 @@
                                     <action selector="SignIn:" destination="RN3-11-uRG" eventType="touchUpInside" id="HNL-hd-knA"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo chico1" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-g2-0MM">
+                                <rect key="frame" x="67" y="35" width="243" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvR-X0-2Ln">
+                                <rect key="frame" x="67" y="250" width="222" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h7-of-JCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-739"/>
+            <point key="canvasLocation" x="717.60000000000002" y="-739.88005997001505"/>
         </scene>
         <!--Sign Out Code-->
         <scene sceneID="4cZ-r3-QfS">
@@ -79,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbi-5i-7Uu">
-                                <rect key="frame" x="167" y="262" width="41" height="30"/>
+                                <rect key="frame" x="137" y="257" width="100" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Iniciar"/>
                                 <connections>
@@ -89,14 +100,19 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRW-aZ-Xar">
                                 <rect key="frame" x="137" y="365" width="100" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cerrar Sesión">
-                                    <color key="titleColor" red="0.00064766839379999999" green="0.00063632582270000001" blue="0.00027901341160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Cerrar Sesión"/>
                                 <connections>
                                     <action selector="SignOut:" destination="jdL-ll-hzd" eventType="touchUpInside" id="KoG-dm-mZv"/>
                                     <segue destination="RN3-11-uRG" kind="show" id="KKK-tV-EjG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interfaz de Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-kq-biV">
+                                <rect key="frame" x="117" y="46" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -104,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksM-zp-mHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="-1044"/>
+            <point key="canvasLocation" x="1964" y="-1045.7271364317842"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="2DL-Wf-UNV">
@@ -163,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTL-iu-aMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818.4000000000001" y="-834.33283358320841"/>
+            <point key="canvasLocation" x="3044" y="-1008"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uBG-Qw-twU">
@@ -180,9 +196,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWr-rZ-ZUJ">
                                 <rect key="frame" x="16" y="290" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Documentos de los Pacientes">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Documentos de los Pacientes"/>
                                 <connections>
                                     <segue destination="pld-XA-8WA" kind="show" id="EyO-lW-54d"/>
                                 </connections>
@@ -190,9 +204,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEF-q9-vqI">
                                 <rect key="frame" x="16" y="574" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Acerca De">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Acerca De"/>
                                 <connections>
                                     <segue destination="V7P-0o-NVf" kind="show" id="4si-xg-7D5"/>
                                 </connections>
@@ -200,9 +212,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04x-mj-oY5">
                                 <rect key="frame" x="38" y="146" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Citas">
-                                    <color key="titleColor" red="0.00064766839379999999" green="0.00063632582270000001" blue="0.00027901341160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Citas"/>
                                 <connections>
                                     <segue destination="u8x-xz-ZnQ" kind="show" id="RrS-BK-y7k"/>
                                 </connections>
@@ -226,9 +236,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyG-7U-Nw5">
                                 <rect key="frame" x="16" y="440" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calendario Citas">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Calendario Citas"/>
                                 <connections>
                                     <segue destination="cNS-HQ-DHD" kind="show" id="Ogq-1Y-EYq"/>
                                 </connections>
@@ -248,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="217-P2-Ypj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2320.8000000000002" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1782" y="-1"/>
         </scene>
         <!--Citas-->
         <scene sceneID="bcN-Uc-eBl">
@@ -451,13 +459,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fernando Ángel Medellín Cuevas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-lw-Isp">
-                                <rect key="frame" x="7" y="232" width="251" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" A01169814" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLP-3q-Ins">
                                 <rect key="frame" x="269" y="232" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -493,18 +494,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interrogacion" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-Yn-Xs9">
-                                <rect key="frame" x="117" y="261" width="125" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interrogacion" translatesAutoresizingMaskIntoConstraints="NO" id="pqN-64-Toe">
-                                <rect key="frame" x="117" y="401" width="125" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interrogacion" translatesAutoresizingMaskIntoConstraints="NO" id="4lR-wv-ozm">
-                                <rect key="frame" x="117" y="541" width="125" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yh-ON-6d8">
                                 <rect key="frame" x="16" y="20" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -513,6 +502,13 @@
                                     <segue destination="JiK-3A-dzb" kind="show" id="xgD-GR-ISz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fernando Ángel Medellín Cuevas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-lw-Isp">
+                                <rect key="frame" x="10" y="232" width="251" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -588,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H27-pe-o9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3552.8000000000002" y="514.99250374812596"/>
+            <point key="canvasLocation" x="3561" y="708"/>
         </scene>
         <!--Historial-->
         <scene sceneID="Zca-gQ-XzH">
@@ -769,12 +765,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jdL-ll-hzd" kind="relationship" relationship="rootViewController" id="9De-OO-f0x"/>
+                        <segue destination="JiK-3A-dzb" kind="relationship" relationship="rootViewController" id="n5o-7n-Eu8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl3-sx-n7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381.5999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="657" y="-1"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="27t-tP-b1P">
@@ -793,7 +789,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0J-gE-8YW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3551.1999999999998" y="-300"/>
+            <point key="canvasLocation" x="3527" y="-126"/>
         </scene>
         <!--Agregar Cita-->
         <scene sceneID="MBW-FT-yAV">
@@ -872,7 +868,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTl-Nt-nms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4488.8000000000002" y="-407.0464767616192"/>
+            <point key="canvasLocation" x="4873" y="-360"/>
         </scene>
     </scenes>
     <resources>
@@ -880,13 +876,13 @@
         <image name="Información" width="256" height="256"/>
         <image name="agenda" width="300" height="300"/>
         <image name="historial" width="1023" height="682"/>
-        <image name="interrogacion" width="626" height="626"/>
+        <image name="logo chico1" width="350" height="241"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tSf-EE-clK"/>
-        <segue reference="xgD-GR-ISz"/>
-        <segue reference="EyO-lW-54d"/>
-        <segue reference="gTt-r0-Lex"/>
+        <segue reference="gZb-Jd-2w5"/>
+        <segue reference="njO-PF-dFU"/>
         <segue reference="Fgz-pd-awG"/>
+        <segue reference="gTt-r0-Lex"/>
+        <segue reference="tSf-EE-clK"/>
     </inferredMetricsTieBreakers>
 </document>

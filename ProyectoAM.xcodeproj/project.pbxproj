@@ -29,9 +29,9 @@
 		2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */; };
 		2C59DC4E1E82A0E20044C8EB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4D1E82A0E20044C8EB /* DataService.swift */; };
 		2C59DC501E82A86C0044C8EB /* SignOutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */; };
+		2C59DC531E82E7360044C8EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C59DC511E82E7360044C8EB /* Main.storyboard */; };
 		2CA7F6EF1E4D9E0900CF3146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */; };
 		2CA7F6F11E4D9E0900CF3146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */; };
-		2CA7F6F41E4D9E0900CF3146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F21E4D9E0900CF3146 /* Main.storyboard */; };
 		2CA7F6F61E4D9E0A00CF3146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */; };
 		2CA7F6F91E4D9E0A00CF3146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */; };
 		2CF9FA771E81C46300541094 /* RegistrationDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */; };
@@ -85,10 +85,10 @@
 		2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C59DC4D1E82A0E20044C8EB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutCode.swift; sourceTree = "<group>"; };
+		2C59DC521E82E7360044C8EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CA7F6EB1E4D9E0900CF3146 /* ProyectoAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CA7F6F31E4D9E0900CF3146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA7F6F81E4D9E0A00CF3146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 				2A0A6AC81E82268A00A79BBD /* FSCalendar */,
 				2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */,
 				2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */,
-				2CA7F6F21E4D9E0900CF3146 /* Main.storyboard */,
 				2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */,
+				2C59DC511E82E7360044C8EB /* Main.storyboard */,
 				2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */,
 				2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */,
 				2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */,
@@ -281,10 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA7F6F91E4D9E0A00CF3146 /* LaunchScreen.storyboard in Resources */,
+				2C59DC531E82E7360044C8EB /* Main.storyboard in Resources */,
 				2A0A6AC91E82268A00A79BBD /* FSCalendar in Resources */,
 				2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */,
 				2CA7F6F61E4D9E0A00CF3146 /* Assets.xcassets in Resources */,
-				2CA7F6F41E4D9E0900CF3146 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,10 +379,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2CA7F6F21E4D9E0900CF3146 /* Main.storyboard */ = {
+		2C59DC511E82E7360044C8EB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CA7F6F31E4D9E0900CF3146 /* Base */,
+				2C59DC521E82E7360044C8EB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -496,6 +496,7 @@
 			baseConfigurationReference = A4E49293D783489DD881156D /* Pods-ProyectoAM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
@@ -513,6 +514,7 @@
 			baseConfigurationReference = 29EA8996E819D90E2C34E0DB /* Pods-ProyectoAM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
