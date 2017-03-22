@@ -30,7 +30,7 @@ class RegistrationDocViewController: UIViewController {
     }
     //accttion boton registrarse
     
-    @IBAction func botonRegistro(_ sender: Any) {
+    @IBAction func botonRegistro(_ sender: AnyObject) {
         
         let userEmail = userEmailTextField.text
         let userPassword = userPasswordTextField.text
@@ -53,8 +53,12 @@ class RegistrationDocViewController: UIViewController {
             displayMyAlertMessage(userMessage: " Las contraseñas no coinciden ")
             return
         }
-        UserDefaults.standard.setValue(userEmail, forKey: "user Email")
-        UserDefaults.standard.setValue(userPassword, forKey: "user Password")
+        
+        
+        
+        //store data
+        UserDefaults.standard.set(userEmail, forKey: "user Email")
+        UserDefaults.standard.set(userPassword, forKey: "user Password")
         UserDefaults.standard.synchronize()
         
         var myAlert = UIAlertController(title: "Alert", message: "Registro Completo", preferredStyle: UIAlertControllerStyle.alert)

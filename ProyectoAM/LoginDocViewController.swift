@@ -29,8 +29,8 @@ class LoginDocViewController: UIViewController {
         
         //leer datos ya registrados
         
-        let userEmailStored = UserDefaults.standard.string(forKey: "userEmail")
-        let userPasswordStored = UserDefaults.standard.string(forKey: "userPassword")
+        let userEmailStored = UserDefaults.standard.string(forKey: "user Email")
+        let userPasswordStored = UserDefaults.standard.string(forKey: "user Password")
         
         if(userEmailStored == userEmail){
             
@@ -39,9 +39,13 @@ class LoginDocViewController: UIViewController {
             if (userPasswordStored == userPassword){
                 
                 //login exitoso
-                UserDefaults.standard.bool(forKey: "el usuario se ha logeado")
+                
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                print("plis logea")
                 //(true, forKey: "el usuario se ha logeado")
                 UserDefaults.standard.synchronize()
+                
+                
                 self.dismiss(animated: true, completion: nil)
             }
         }
