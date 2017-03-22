@@ -28,6 +28,7 @@
 		2A0A6AF91E8226C000A79BBD /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */; };
 		2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */; };
 		2C59DC4E1E82A0E20044C8EB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4D1E82A0E20044C8EB /* DataService.swift */; };
+		2C59DC501E82A86C0044C8EB /* SignOutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */; };
 		2CA7F6EF1E4D9E0900CF3146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */; };
 		2CA7F6F11E4D9E0900CF3146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */; };
 		2CA7F6F41E4D9E0900CF3146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F21E4D9E0900CF3146 /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCalendarWeekdayView.m; path = FSCalendar/FSCalendarWeekdayView.m; sourceTree = "<group>"; };
 		2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C59DC4D1E82A0E20044C8EB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutCode.swift; sourceTree = "<group>"; };
 		2CA7F6EB1E4D9E0900CF3146 /* ProyectoAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				2CF9FA781E81C81300541094 /* LoginDocViewController.swift */,
 				2A0A6AC61E82254500A79BBD /* Calendario.swift */,
 				2C59DC4D1E82A0E20044C8EB /* DataService.swift */,
+				2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */,
 			);
 			path = ProyectoAM;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				76C3E0331E809CCD0077E36E /* Puente.m in Sources */,
 				76C3E03C1E80B2C70077E36E /* ContactoDoc.swift in Sources */,
 				2A0A6AF51E8226C000A79BBD /* FSCalendarHeaderView.m in Sources */,
+				2C59DC501E82A86C0044C8EB /* SignOutCode.swift in Sources */,
 				2A0A6AEB1E8226C000A79BBD /* FSCalendar+Deprecated.m in Sources */,
 				2A0A6AEF1E8226C000A79BBD /* FSCalendarCollectionView.m in Sources */,
 				2CF9FA771E81C46300541094 /* RegistrationDocViewController.swift in Sources */,
