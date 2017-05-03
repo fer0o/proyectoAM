@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var signInButton1: UIButton!
     
-    
     //let keyChain = DataService().keyChain
     
     //Prueba cuando ya el usuario se loguea, se utiliza ViewDidAppear
@@ -69,7 +68,6 @@ class ViewController: UIViewController {
         //UIGraphicsBeginImageContext(self.view.frame.size)
         //UIImage(named: "tablita3.png")?.draw(in: self.view.bounds)//?.draw(in: self.view.bounds)
         //UIImage.ScaleAspectFill
-        
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
