@@ -6,7 +6,6 @@
 //  Copyright © 2017 Fernando Medellin Cuevas. All rights reserved.
 //
 
-
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -78,20 +77,25 @@ class ViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+    }
+    
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         
         //Validation Email and Password
         
-        if let email = emailField.text, let pass = passwordField {
+        if let email = emailField.text, let pass = passwordField.text {
         
         
         if isSignIn {
             //Sign in the user with the Firebase
-            FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: {user?, error?) in
+            FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: { (user, error) in
                 //code
                 if let u = user{
                     //User found
-                    
+                    self.performSegue(withIdentifier: "goToHome", sender: self)
                 }
                 else{
                     //Check error in show message.
@@ -107,7 +111,7 @@ class ViewController: UIViewController {
                 
                 if let u = user {
                     //User is found, go to home screen
-                    
+                    self.performSegue(withIdentifier: "goToHome", sender: self)
                 }
                 else{
                     //Error: check error and show message.
@@ -117,7 +121,6 @@ class ViewController: UIViewController {
         }
     
     }
-    
     
     
     func CompleteSignIn (id: String){
