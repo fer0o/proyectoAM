@@ -100,9 +100,8 @@ class ViewController: UIViewController {
                 else{
                     //Check error in show message.
                 }
-                
-                
             })
+            createAlertSigning()
             
         }
         else{
@@ -115,11 +114,30 @@ class ViewController: UIViewController {
                 }
                 else{
                     //Error: check error and show message.
+                    
                 }
             })
+            createAlertRegister()
         }
         }
+    }
     
+    func createAlertSigning(){
+        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Inicio de sesión incorrecto o inexistente", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaInicio.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaInicio, animated: true, completion: nil)
+    }
+    
+    func createAlertRegister(){
+        let alertaRegistro  = UIAlertController(title: "Intenta de nuevo", message: "El registro ya existe o surgió un error", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertaRegistro.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaRegistro.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaRegistro, animated: true, completion: nil)
     }
     
     
