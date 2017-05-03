@@ -16,8 +16,19 @@ class ViewController: UIViewController {
     
     //var username = NSUserName()
     
+    
+    
+    @IBOutlet weak var signInSelector: UISegmentedControl!
+    
+    @IBOutlet weak var signInLabel: UILabel!
+    
+    var isSignIn: Bool = true
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var signInButton1: UIButton!
+    
     
     //let keyChain = DataService().keyChain
     
@@ -48,11 +59,43 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
+        //Flip the boolean
+        isSignIn = !isSignIn
+        
+        //Check the bool and set the buttons and labels
+        
+        if isSignIn {
+            signInLabel.text = "Iniciar Sesión"
+            signInButton1.setTitle("Iniciar Sesión", for: .normal)
+        }
+        else{
+            signInLabel.text = "Registrarse"
+            signInButton1.setTitle("Registrarse", for: .normal)
+        }
+        
+    }
+    
+    @IBAction func signInButtonTapped(_ sender: UIButton) {
+        if isSignIn {
+            //Sign in the user with the Firebase
+            
+        }
+        else{
+            //Register the user with the Firebase
+            
+        }
+    }
+    
+    
+    
     func CompleteSignIn (id: String){
         let keyChain = DataService().keyChain
         keyChain.set(id , forKey: "uid")
     }
     
+    //Modificar Inicio de sesión
     @IBAction func SignIn(_ sender: Any){
         if let email = emailField.text, let password = passwordField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
