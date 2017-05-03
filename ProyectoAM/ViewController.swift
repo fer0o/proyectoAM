@@ -90,6 +90,12 @@ class ViewController: UIViewController {
         
         
         if isSignIn {
+            
+            if self.emailField.text == "" || self.passwordField.text == "" {
+                createAlertSigning()
+                print("Please enter email and password.")
+            }
+            else{
             //Sign in the user with the Firebase
             FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: { (user, error) in
                 //code
@@ -99,12 +105,19 @@ class ViewController: UIViewController {
                 }
                 else{
                     //Check error in show message.
+                    //self.createAlertSigning()
                 }
             })
-            createAlertSigning()
+            }
             
         }
         else{
+            
+            if self.emailField.text == "" || self.passwordField.text == "" {
+                createAlertRegister()
+                print("Please enter email and password.")
+            }
+            else{
             //Register the user with the Firebase
             FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
                 
@@ -114,16 +127,16 @@ class ViewController: UIViewController {
                 }
                 else{
                     //Error: check error and show message.
-                    
+                    //self.createAlertRegister()
                 }
             })
-            createAlertRegister()
+            }
         }
         }
     }
     
     func createAlertSigning(){
-        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Inicio de sesión vacío o inexistente", preferredStyle: UIAlertControllerStyle.alert)
+        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Campos vacíos de inicio de sesión.", preferredStyle: UIAlertControllerStyle.alert)
         
         alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             alertaInicio.dismiss(animated:true, completion: nil)
@@ -132,7 +145,7 @@ class ViewController: UIViewController {
     }
     
     func createAlertRegister(){
-        let alertaRegistro  = UIAlertController(title: "Intenta de nuevo", message: "El registro se encuentra vacío o surgió un error", preferredStyle: UIAlertControllerStyle.alert)
+        let alertaRegistro  = UIAlertController(title: "Intenta de nuevo", message: "Los campos del registro se encuentran vacíos o surgió un error.", preferredStyle: UIAlertControllerStyle.alert)
         
         alertaRegistro.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             alertaRegistro.dismiss(animated:true, completion: nil)
