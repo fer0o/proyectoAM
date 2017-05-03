@@ -669,55 +669,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hd-kw-g7y">
-                                <rect key="frame" x="-13" y="66" width="393" height="581"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A01018322" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-MT-9tH">
-                                        <rect key="frame" x="281" y="446" width="88" height="21"/>
+                                        <rect key="frame" x="282" y="389" width="88" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Luis Fernando Espinosa Elizalde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-d2-aLL">
-                                        <rect key="frame" x="20" y="306" width="245" height="21"/>
+                                        <rect key="frame" x="8" y="265" width="245" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fernando Ángel Medellín Cuevas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-lw-Isp">
-                                        <rect key="frame" x="23" y="166" width="251" height="21"/>
+                                        <rect key="frame" x="8" y="136" width="251" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A01375758" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncu-1e-IiB">
-                                        <rect key="frame" x="281" y="306" width="89" height="21"/>
+                                        <rect key="frame" x="281" y="265" width="89" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Arturo Velazquez Rios  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egf-8w-EvB">
-                                        <rect key="frame" x="27" y="446" width="178" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" A01169814" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLP-3q-Ins">
-                                        <rect key="frame" x="282" y="166" width="91" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="8" y="389" width="178" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A01169661" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcr-fV-ahr">
-                                        <rect key="frame" x="261" y="20" width="86" height="21"/>
+                                        <rect key="frame" x="281" y="7" width="86" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allan Iván Ramírez Alanís" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unk-kj-n6c">
-                                        <rect key="frame" x="27" y="20" width="190" height="21"/>
+                                        <rect key="frame" x="8" y="7" width="190" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" A01169814" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLP-3q-Ins">
+                                        <rect key="frame" x="279" y="136" width="91" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -728,28 +728,28 @@
                                     <constraint firstItem="ncu-1e-IiB" firstAttribute="baseline" secondItem="DgP-d2-aLL" secondAttribute="baseline" id="0BD-pE-wsf"/>
                                     <constraint firstItem="ncu-1e-IiB" firstAttribute="top" secondItem="0Hd-kw-g7y" secondAttribute="top" constant="370" id="4XF-93-1Zw"/>
                                     <constraint firstItem="ncu-1e-IiB" firstAttribute="leading" secondItem="DgP-d2-aLL" secondAttribute="trailing" constant="16" id="HWQ-tV-sWP"/>
-                                    <constraint firstAttribute="bottom" secondItem="n6Z-MT-9tH" secondAttribute="bottom" constant="50" id="Khc-vO-kXH"/>
+                                    <constraint firstAttribute="bottom" secondItem="n6Z-MT-9tH" secondAttribute="bottom" constant="72" id="Khc-vO-kXH"/>
                                     <constraint firstItem="n6Z-MT-9tH" firstAttribute="leading" secondItem="0Hd-kw-g7y" secondAttribute="leading" constant="281" id="kgN-XQ-3WO"/>
                                     <constraint firstItem="n6Z-MT-9tH" firstAttribute="leading" secondItem="ncu-1e-IiB" secondAttribute="leading" id="krb-sK-mUs"/>
                                     <constraint firstItem="n6Z-MT-9tH" firstAttribute="leading" secondItem="Egf-8w-EvB" secondAttribute="trailing" constant="76" id="qkJ-uh-psE"/>
                                     <constraint firstItem="n6Z-MT-9tH" firstAttribute="top" secondItem="0Hd-kw-g7y" secondAttribute="top" constant="510" id="vel-22-N49"/>
-                                    <constraint firstAttribute="trailing" secondItem="n6Z-MT-9tH" secondAttribute="trailing" constant="24" id="yeA-Mp-xqn"/>
+                                    <constraint firstAttribute="trailing" secondItem="n6Z-MT-9tH" secondAttribute="trailing" constant="6" id="yeA-Mp-xqn"/>
                                     <constraint firstItem="n6Z-MT-9tH" firstAttribute="baseline" secondItem="Egf-8w-EvB" secondAttribute="baseline" id="zVk-3D-GpA"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0Hd-kw-g7y" firstAttribute="top" secondItem="7XD-54-UPU" secondAttribute="bottom" constant="2" id="0Dm-93-udO"/>
-                            <constraint firstItem="0Hd-kw-g7y" firstAttribute="leading" secondItem="ace-fg-icT" secondAttribute="leadingMargin" constant="-29" id="4yk-Vh-cr4"/>
-                            <constraint firstItem="Kpe-hb-LLo" firstAttribute="top" secondItem="0Hd-kw-g7y" secondAttribute="bottom" constant="20" id="QBO-Nh-Ady"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0Hd-kw-g7y" secondAttribute="trailing" constant="-21" id="ymb-Nv-QGF"/>
+                            <constraint firstItem="0Hd-kw-g7y" firstAttribute="top" secondItem="7XD-54-UPU" secondAttribute="bottom" id="0Dm-93-udO"/>
+                            <constraint firstItem="0Hd-kw-g7y" firstAttribute="leading" secondItem="ace-fg-icT" secondAttribute="leadingMargin" constant="-16" id="4yk-Vh-cr4"/>
+                            <constraint firstItem="Kpe-hb-LLo" firstAttribute="top" secondItem="0Hd-kw-g7y" secondAttribute="bottom" id="QBO-Nh-Ady"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Hd-kw-g7y" secondAttribute="trailing" constant="-16" id="ymb-Nv-QGF"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVt-tG-fZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="734"/>
+            <point key="canvasLocation" x="1629.5999999999999" y="732.68365817091455"/>
         </scene>
         <!--Citas Sin Pac-->
         <scene sceneID="Hk5-O8-gxw">
