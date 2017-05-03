@@ -28,7 +28,7 @@
 		2A0A6AF91E8226C000A79BBD /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */; };
 		2A20C85A1EBA40CD00B23783 /* CitasSinPac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20C8591EBA40CD00B23783 /* CitasSinPac.swift */; };
 		2A20C85C1EBA420E00B23783 /* CitasSinD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20C85B1EBA420E00B23783 /* CitasSinD.swift */; };
-		2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */; };
+		2C1E6D571EBA5EAD00544D35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1E6D561EBA5EAD00544D35 /* GoogleService-Info.plist */; };
 		2C59DC4E1E82A0E20044C8EB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4D1E82A0E20044C8EB /* DataService.swift */; };
 		2C59DC501E82A86C0044C8EB /* SignOutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */; };
 		2C59DC531E82E7360044C8EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C59DC511E82E7360044C8EB /* Main.storyboard */; };
@@ -86,7 +86,7 @@
 		2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCalendarWeekdayView.m; path = FSCalendar/FSCalendarWeekdayView.m; sourceTree = "<group>"; };
 		2A20C8591EBA40CD00B23783 /* CitasSinPac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasSinPac.swift; sourceTree = "<group>"; };
 		2A20C85B1EBA420E00B23783 /* CitasSinD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasSinD.swift; sourceTree = "<group>"; };
-		2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C1E6D561EBA5EAD00544D35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C59DC4D1E82A0E20044C8EB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutCode.swift; sourceTree = "<group>"; };
 		2C59DC521E82E7360044C8EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 				2C59DC511E82E7360044C8EB /* Main.storyboard */,
 				2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */,
 				2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */,
-				2C59DC4B1E8293230044C8EB /* GoogleService-Info.plist */,
+				2C1E6D561EBA5EAD00544D35 /* GoogleService-Info.plist */,
 				76C3E0321E809CCD0077E36E /* Puente.m */,
 				76C3E0311E809CCD0077E36E /* ProyectoAM-Bridging-Header.h */,
 				76C3E0371E809D6B0077E36E /* Agendar.swift */,
@@ -288,8 +288,8 @@
 			files = (
 				2CA7F6F91E4D9E0A00CF3146 /* LaunchScreen.storyboard in Resources */,
 				2C59DC531E82E7360044C8EB /* Main.storyboard in Resources */,
+				2C1E6D571EBA5EAD00544D35 /* GoogleService-Info.plist in Resources */,
 				2A0A6AC91E82268A00A79BBD /* FSCalendar in Resources */,
-				2C59DC4C1E8293230044C8EB /* GoogleService-Info.plist in Resources */,
 				2CA7F6F61E4D9E0A00CF3146 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +509,7 @@
 				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.famc.ProyectoAM;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.rmr.ElConsultorio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProyectoAM/ProyectoAM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -527,7 +527,7 @@
 				DEVELOPMENT_TEAM = P28U79D7KY;
 				INFOPLIST_FILE = ProyectoAM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mx.itesm.famc.ProyectoAM;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.rmr.ElConsultorio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProyectoAM/ProyectoAM-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
