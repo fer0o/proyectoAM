@@ -194,9 +194,12 @@
                                     <segue destination="JTR-fa-7Zz" kind="show" id="8LI-Hb-1ug"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVV-Rd-pwn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVV-Rd-pwn">
                                 <rect key="frame" x="137" y="473" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5tE-VV-rpT"/>
+                                    <constraint firstAttribute="width" constant="92" id="mDt-W9-NGS"/>
+                                </constraints>
                                 <state key="normal" title="Iniciar Doctor"/>
                                 <connections>
                                     <segue destination="qqx-cA-RxZ" kind="show" id="ls5-Ex-vVy"/>
@@ -211,13 +214,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kVV-Rd-pwn" firstAttribute="top" secondItem="yRW-aZ-Xar" secondAttribute="bottom" constant="122" id="2jB-bA-1An"/>
                             <constraint firstItem="rbi-5i-7Uu" firstAttribute="top" secondItem="P4K-kq-biV" secondAttribute="bottom" constant="85" id="2m0-vw-5Z6"/>
                             <constraint firstItem="P4K-kq-biV" firstAttribute="centerX" secondItem="rbi-5i-7Uu" secondAttribute="centerX" constant="0.5" id="EQT-pF-XgN"/>
                             <constraint firstItem="yRW-aZ-Xar" firstAttribute="top" secondItem="rbi-5i-7Uu" secondAttribute="bottom" constant="89" id="Egl-GU-SQn"/>
+                            <constraint firstItem="pWg-PO-PCD" firstAttribute="top" secondItem="kVV-Rd-pwn" secondAttribute="bottom" constant="164" id="F5W-BA-mx2"/>
                             <constraint firstItem="rbi-5i-7Uu" firstAttribute="leading" secondItem="ehY-us-lSe" secondAttribute="leadingMargin" constant="110" id="HUL-yo-DBE"/>
                             <constraint firstItem="P4K-kq-biV" firstAttribute="top" secondItem="kqS-sb-faq" secondAttribute="bottom" constant="54" id="QFf-CV-oKT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kVV-Rd-pwn" secondAttribute="trailing" constant="130" id="RFa-op-XLK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yRW-aZ-Xar" secondAttribute="trailing" constant="122" id="RcS-6o-49y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rbi-5i-7Uu" secondAttribute="trailing" constant="119" id="WjV-tH-kzm"/>
+                            <constraint firstItem="kVV-Rd-pwn" firstAttribute="leading" secondItem="ehY-us-lSe" secondAttribute="leadingMargin" constant="121" id="fmb-8v-qkN"/>
                             <constraint firstItem="yRW-aZ-Xar" firstAttribute="leading" secondItem="ehY-us-lSe" secondAttribute="leadingMargin" constant="121" id="u6N-si-kqT"/>
                         </constraints>
                     </view>
@@ -1316,7 +1323,7 @@
         <image name="tablita3" width="700" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IKW-HD-bRO"/>
+        <segue reference="fCH-If-gMK"/>
         <segue reference="34C-0c-8w7"/>
     </inferredMetricsTieBreakers>
 </document>
