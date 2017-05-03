@@ -28,6 +28,7 @@
 		2A0A6AF91E8226C000A79BBD /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */; };
 		2A20C85A1EBA40CD00B23783 /* CitasSinPac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20C8591EBA40CD00B23783 /* CitasSinPac.swift */; };
 		2A20C85C1EBA420E00B23783 /* CitasSinD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20C85B1EBA420E00B23783 /* CitasSinD.swift */; };
+		2AA80EA11EBA890D00E03D2C /* Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA80EA01EBA890D00E03D2C /* Updates.swift */; };
 		2C1E6D571EBA5EAD00544D35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1E6D561EBA5EAD00544D35 /* GoogleService-Info.plist */; };
 		2C59DC4E1E82A0E20044C8EB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4D1E82A0E20044C8EB /* DataService.swift */; };
 		2C59DC501E82A86C0044C8EB /* SignOutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */; };
@@ -86,6 +87,7 @@
 		2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCalendarWeekdayView.m; path = FSCalendar/FSCalendarWeekdayView.m; sourceTree = "<group>"; };
 		2A20C8591EBA40CD00B23783 /* CitasSinPac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasSinPac.swift; sourceTree = "<group>"; };
 		2A20C85B1EBA420E00B23783 /* CitasSinD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitasSinD.swift; sourceTree = "<group>"; };
+		2AA80EA01EBA890D00E03D2C /* Updates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updates.swift; sourceTree = "<group>"; };
 		2C1E6D561EBA5EAD00544D35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C59DC4D1E82A0E20044C8EB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutCode.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				2C59DC4F1E82A86C0044C8EB /* SignOutCode.swift */,
 				2A20C8591EBA40CD00B23783 /* CitasSinPac.swift */,
 				2A20C85B1EBA420E00B23783 /* CitasSinD.swift */,
+				2AA80EA01EBA890D00E03D2C /* Updates.swift */,
 			);
 			path = ProyectoAM;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				2A0A6AF21E8226C000A79BBD /* FSCalendarDelegationFactory.m in Sources */,
 				2A0A6AF01E8226C000A79BBD /* FSCalendarCollectionViewLayout.m in Sources */,
 				2A0A6AF41E8226C000A79BBD /* FSCalendarExtensions.m in Sources */,
+				2AA80EA11EBA890D00E03D2C /* Updates.swift in Sources */,
 				2CA7F6F11E4D9E0900CF3146 /* ViewController.swift in Sources */,
 				2A0A6AF91E8226C000A79BBD /* FSCalendarWeekdayView.m in Sources */,
 				2A0A6AF71E8226C000A79BBD /* FSCalendarStickyHeader.m in Sources */,
