@@ -118,7 +118,7 @@ class CitasSinD: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if sqlite3_exec(baseDatos, update, nil, nil, &error) == SQLITE_OK {
             
             print("Updated")
-            let alertaCorrecto = UIAlertController(title: "Aceptado", message: "La cita a sido confirmada", preferredStyle: .alert)
+            let alertaCorrecto = UIAlertController(title: "Aceptado", message: "La cita ha sido confirmada", preferredStyle: .alert)
             let btnAceptar = UIAlertAction(title:"Aceptar", style: .default, handler: nil)
             alertaCorrecto.addAction(btnAceptar)
             present(alertaCorrecto, animated: true, completion: nil)
