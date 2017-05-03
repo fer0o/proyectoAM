@@ -345,6 +345,7 @@ class Agendar: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if abrirBaseDatos(){
             print("ok")
+            borrarRegistro()
             consultarBaseDatos()
             if crearTabla(nombreTabla: "CITAS"){
                 consultarBaseDatos2()
