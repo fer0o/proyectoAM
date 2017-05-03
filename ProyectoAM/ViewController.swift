@@ -123,7 +123,7 @@ class ViewController: UIViewController {
     }
     
     func createAlertSigning(){
-        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Inicio de sesión incorrecto o inexistente", preferredStyle: UIAlertControllerStyle.alert)
+        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Inicio de sesión vacío o inexistente", preferredStyle: UIAlertControllerStyle.alert)
         
         alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             alertaInicio.dismiss(animated:true, completion: nil)
@@ -132,7 +132,7 @@ class ViewController: UIViewController {
     }
     
     func createAlertRegister(){
-        let alertaRegistro  = UIAlertController(title: "Intenta de nuevo", message: "El registro ya existe o surgió un error", preferredStyle: UIAlertControllerStyle.alert)
+        let alertaRegistro  = UIAlertController(title: "Intenta de nuevo", message: "El registro se encuentra vacío o surgió un error", preferredStyle: UIAlertControllerStyle.alert)
         
         alertaRegistro.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             alertaRegistro.dismiss(animated:true, completion: nil)
