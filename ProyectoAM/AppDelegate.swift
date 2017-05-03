@@ -11,6 +11,9 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var idPaciente = "P01111111"
+    var idDoctor = "D01375758"
 
     var window: UIWindow?
 

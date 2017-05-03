@@ -56,9 +56,34 @@ class ViewController: UIViewController {
         if keyChain.get("uid") != nil {
             performSegue(withIdentifier: "SignIn", sender: nil)
         }
+        
+        //let imagen1 = UIImage(named: "tablita3.png")
+        //let imageview = UIImageView(image; imagen1)
+        //imageview.contentMode UIViewContentMode.scaleAspectFit
+        //UIGraphicsBeginImageContext(self.imageview.frame.size)
+        
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"tablita3")!)
+        //self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named:"tablita3"))
+        //UIGraphicsBeginImageContext(self.view.frame.size)
+        //UIImage(named: "tablita3.png")?.draw(in: self.view.bounds)//?.draw(in: self.view.bounds)
+        //UIImage.ScaleAspectFill
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
         //Flip the boolean
@@ -181,6 +206,9 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
+    
 }
 
     /*override func didReceiveMemoryWarning() {
