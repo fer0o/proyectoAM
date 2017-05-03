@@ -164,7 +164,7 @@
                         <outlet property="signInButton1" destination="OGj-0g-0pm" id="7sv-Pt-ZQh"/>
                         <outlet property="signInLabel" destination="yfx-Bs-14C" id="RGT-4H-X3Q"/>
                         <outlet property="signInSelector" destination="2Vy-nf-MTX" id="88h-ft-ejf"/>
-                        <segue destination="jdL-ll-hzd" kind="show" identifier="SignIn" id="Kbc-J1-Ljp"/>
+                        <segue destination="jdL-ll-hzd" kind="show" identifier="goToHome" id="fCH-If-gMK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h7-of-JCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -997,7 +997,7 @@
         <image name="logo chico1" width="350" height="241"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kbc-J1-Ljp"/>
+        <segue reference="fCH-If-gMK"/>
         <segue reference="8LI-Hb-1ug"/>
     </inferredMetricsTieBreakers>
 </document>

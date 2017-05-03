@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 import KeychainSwift
 
@@ -78,14 +79,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
+        
+        //Validation Email and Password
+        
+        if let email = emailField.text, let pass = passwordField {
+        
+        
         if isSignIn {
             //Sign in the user with the Firebase
+            FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: {user?, error?) in
+                //code
+                if let u = user{
+                    //User found
+                    
+                }
+                else{
+                    //Check error in show message.
+                }
+                
+                
+            })
             
         }
         else{
             //Register the user with the Firebase
-            
+            FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
+                
+                if let u = user {
+                    //User is found, go to home screen
+                    
+                }
+                else{
+                    //Error: check error and show message.
+                }
+            })
         }
+        }
+    
     }
     
     
