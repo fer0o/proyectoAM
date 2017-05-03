@@ -1,34 +1,28 @@
 //
-//  CitasDoc.swift
+//  CitasSinD.swift
 //  ProyectoAM
 //
-//  Created by Luis Espinosa on 3/20/17.
+//  Created by Luis Espinosa on 03/05/17.
 //  Copyright © 2017 Fernando Medellin Cuevas. All rights reserved.
 //
 
 import UIKit
 
-class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
+class CitasSinD: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var baseDatos: OpaquePointer? = nil
     var fechas = [String] ()
     var nombres = [String] ()
     var ids = [String] ()
-    
-    //var baseDatos: OpaquePointer? = nil
-    //var fechas = [String] ()
-    //var nombres = [String] ()
-    //var ids = [String] ()
-    //var idDoctor = "D01375758"
-    
     @IBOutlet weak var tabla: UITableView!
     
-    var selectIDS: String = ""
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectIDS = "\(ids[indexPath.row])"
-        print(selectIDS)
+        updateCita(indexPath.row)
+        fechas.remove(at: indexPath.row)
+        nombres.remove(at: indexPath.row)
+        ids.remove(at: indexPath.row)
+        tabla.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,11 +34,16 @@ class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "celdaPacientes", for: indexPath)
+        let celda = tableView.dequeueReusableCell(withIdentifier: "citasNoD", for: indexPath)
         celda.textLabel?.text = fechas[indexPath.row]
         //Subtitulos (detalles)
         celda.detailTextLabel?.text = nombres[indexPath.row]
         return celda
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -58,7 +57,7 @@ class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
+    
     // MARK: - Funciones de la BD
     
     func abrirBaseDatos() -> Bool {
@@ -83,6 +82,10 @@ class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let query = "DELETE FROM CITAS WHERE DOCTORID = '\(appDelegate.idDoctor)' AND PACIENTEID = '\(ids[row])' AND FECHA = '\(fechas[row])'"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, query, nil, nil, &error) == SQLITE_OK {
+            let alertaCorrecto = UIAlertController(title: "Cancelado", message: "La cita a sido cancelada, se avisara al paciente", preferredStyle: .alert)
+            let btnAceptar = UIAlertAction(title:"Aceptar", style: .default, handler: nil)
+            alertaCorrecto.addAction(btnAceptar)
+            present(alertaCorrecto, animated: true, completion: nil)
             print("Registro borrado")
         } else {
             let msg = String.init(cString: error!)
@@ -91,7 +94,7 @@ class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func consultarBaseDatos() {
-        let sqlConsulta = "SELECT CITAS.PACIENTEID, CITAS.FECHA, PACIENTES.NOMBRE FROM CITAS, DOCTORES, PACIENTES WHERE DOCTORES.NOMINA==CITAS.DOCTORID AND PACIENTES.ID==CITAS.PACIENTEID AND DOCTORES.NOMINA == '\(appDelegate.idDoctor)' AND CITAS.BANDERA=='1'"
+        let sqlConsulta = "SELECT CITAS.PACIENTEID, CITAS.FECHA, PACIENTES.NOMBRE FROM CITAS, DOCTORES, PACIENTES WHERE DOCTORES.NOMINA==CITAS.DOCTORID AND PACIENTES.ID==CITAS.PACIENTEID AND DOCTORES.NOMINA == '\(appDelegate.idDoctor)' AND CITAS.BANDERA=='0'"
         var declaracion: OpaquePointer? = nil
         if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
             while sqlite3_step(declaracion) == SQLITE_ROW {
@@ -99,34 +102,33 @@ class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 let fecha = String.init(cString: sqlite3_column_text(declaracion, 1))
                 let nombre = String.init(cString: sqlite3_column_text(declaracion, 2))
                 print("\(id), \(fecha), \(nombre)")
+                print("holas")
                 ids.append(id)
                 fechas.append(fecha)
                 nombres.append(nombre)
             }
+        } else{
+            print("nel")
         }
     }
     
-    /*func consultarBaseDatos() {
-        let sqlConsulta = "SELECT CITAS.PACIENTEID, CITAS.FECHA, PACIENTES.NOMBRE FROM CITAS, DOCTORES, PACIENTES WHERE DOCTORES.NOMINA==CITAS.DOCTORID AND PACIENTES.ID==CITAS.PACIENTEID AND DOCTORES.NOMINA == '\(idDoctor)'"
-        var declaracion: OpaquePointer? = nil
-        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
-            while sqlite3_step(declaracion) == SQLITE_ROW {
-                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
-                let fecha = String.init(cString: sqlite3_column_text(declaracion, 1))
-                let nombre = String.init(cString: sqlite3_column_text(declaracion, 2))
-                print("\(id), \(fecha), \(nombre)")
-                ids.append(id)
-                fechas.append(fecha)
-                nombres.append(nombre)
-            }
+    func updateCita(_ row: Int){
+        let update = "UPDATE CITAS SET BANDERA = '1' WHERE PACIENTEID='\(ids[row])' AND DOCTORID='\(appDelegate.idDoctor)' AND FECHA='\(fechas[row])'"
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, update, nil, nil, &error) == SQLITE_OK {
+            
+            print("Updated")
+            let alertaCorrecto = UIAlertController(title: "Aceptado", message: "La cita a sido confirmada", preferredStyle: .alert)
+            let btnAceptar = UIAlertAction(title:"Aceptar", style: .default, handler: nil)
+            alertaCorrecto.addAction(btnAceptar)
+            present(alertaCorrecto, animated: true, completion: nil)
+        } else{
+            let msg = String.init(cString: error!)
+            print("Error: \(msg)")
+            print("No updated")
         }
-    }*/
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Pasar el pais el segundo controlador
-        let segundoVC = segue.destination as! ContactoPac
-        segundoVC.idPac = selectIDS
     }
+    
     
     //MARK: -
     override func viewWillAppear(_ animated: Bool) {
@@ -138,7 +140,6 @@ class CitasDoc: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if abrirBaseDatos(){
             print("ok")
             consultarBaseDatos()
-            sqlite3_close(baseDatos)
             tabla.reloadData()
         } else{
             print("Error al abrir BD")
