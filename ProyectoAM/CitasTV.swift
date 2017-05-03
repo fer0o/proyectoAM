@@ -9,14 +9,19 @@ import UIKit
 
 class CitasTV: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var baseDatos: OpaquePointer? = nil
     var fechas = [String] ()
     var especialidades = [String] ()
     var nominas = [String] ()
-    var idPaciente = "P01111111"
+    
+    //var baseDatos: OpaquePointer? = nil
+    //var fechas = [String] ()
+    //var especialidades = [String] ()
+    //var nominas = [String] ()
+    //var idPaciente = "P01111111"
     
     @IBOutlet weak var tabla: UITableView!
-    
     
     var selectNom: String = ""
     
@@ -41,6 +46,23 @@ class CitasTV: UIViewController, UITableViewDelegate, UITableViewDataSource{
         return celda
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            fechas.remove(at: indexPath.row)
+            especialidades.remove(at: indexPath.row)
+            nominas.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+
+    
     // MARK: - Funciones de la BD
     
     func abrirBaseDatos() -> Bool {
@@ -62,7 +84,7 @@ class CitasTV: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func consultarBaseDatos() {
-        let sqlConsulta = "SELECT CITAS.DOCTORID, CITAS.FECHA, DOCTORES.ESPECIALIDAD FROM CITAS, DOCTORES, PACIENTES WHERE DOCTORES.NOMINA==CITAS.DOCTORID AND PACIENTES.ID==CITAS.PACIENTEID AND PACIENTES.ID == '\(idPaciente)'"
+        let sqlConsulta = "SELECT CITAS.DOCTORID, CITAS.FECHA, DOCTORES.ESPECIALIDAD FROM CITAS, DOCTORES, PACIENTES WHERE DOCTORES.NOMINA==CITAS.DOCTORID AND PACIENTES.ID==CITAS.PACIENTEID AND PACIENTES.ID == '\(appDelegate.idPaciente)' AND BANDERA=='1'"
         var declaracion: OpaquePointer? = nil
         if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
             while sqlite3_step(declaracion) == SQLITE_ROW {
@@ -82,6 +104,28 @@ class CitasTV: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let segundoVC = segue.destination as! ContactoDoc
         segundoVC.nominaC = selectNom
     }
+    
+    /*func consultarBaseDatos() {
+        let sqlConsulta = "SELECT CITAS.DOCTORID, CITAS.FECHA, DOCTORES.ESPECIALIDAD FROM CITAS, DOCTORES, PACIENTES WHERE DOCTORES.NOMINA==CITAS.DOCTORID AND PACIENTES.ID==CITAS.PACIENTEID AND PACIENTES.ID == '\(idPaciente)'"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let nomina = String.init(cString: sqlite3_column_text(declaracion, 0))
+                let fecha = String.init(cString: sqlite3_column_text(declaracion, 1))
+                let especialidad = String.init(cString: sqlite3_column_text(declaracion, 2))
+                print("\(nomina), \(fecha), \(especialidad)")
+                especialidades.append(especialidad)
+                fechas.append(fecha)
+                nominas.append(nomina)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Pasar el pais el segundo controlador
+        let segundoVC = segue.destination as! ContactoDoc
+        segundoVC.nominaC = selectNom
+    }*/
     
     //MARK: -
     override func viewWillAppear(_ animated: Bool) {
