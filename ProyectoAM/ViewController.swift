@@ -279,7 +279,8 @@ class ViewController: UIViewController {
                 
                 if let u = user {
                     //User is found, go to home screen
-                    self.performSegue(withIdentifier: "goToHome", sender: self)
+                    self.createAlertRegisterSuccessful()
+                    //self.performSegue(withIdentifier: "goToHome", sender: self)
                 }
                 else{
                     //Error: check error and show message.
@@ -302,6 +303,15 @@ class ViewController: UIViewController {
     
     func createAlertRegister(){
         let alertaRegistro  = UIAlertController(title: "Intenta de nuevo", message: "Los campos del registro se encuentran vacíos o surgió un error.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertaRegistro.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaRegistro.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaRegistro, animated: true, completion: nil)
+    }
+    
+    func createAlertRegisterSuccessful(){
+        let alertaRegistro  = UIAlertController(title: "Registro Exitoso", message: "Bienvenido al sistema, por favor inicia sesión.", preferredStyle: UIAlertControllerStyle.alert)
         
         alertaRegistro.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             alertaRegistro.dismiss(animated:true, completion: nil)
