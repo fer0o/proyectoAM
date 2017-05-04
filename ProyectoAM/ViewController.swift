@@ -260,6 +260,7 @@ class ViewController: UIViewController {
                     self.performSegue(withIdentifier: "goToHome", sender: self)
                 }
                 else{
+                    self.createAlertLoginFailed()
                     //Check error in show message.
                     //self.createAlertSigning()
                 }
@@ -318,6 +319,16 @@ class ViewController: UIViewController {
         }))
         self.present(alertaRegistro, animated: true, completion: nil)
     }
+    
+    func createAlertLoginFailed(){
+        let alertaRegistro  = UIAlertController(title: "Error", message: "Usuario/Contraseña no existente o incorrecta, revisa tus credenciales.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertaRegistro.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaRegistro.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaRegistro, animated: true, completion: nil)
+    }
+
     
     
     func CompleteSignIn (id: String){
