@@ -12,11 +12,9 @@ import FirebaseAuth
 import FirebaseDatabase
 import KeychainSwift
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate{
     
     //var username = NSUserName()
-    
-    
     
     @IBOutlet weak var signInSelector: UISegmentedControl!
     
@@ -24,6 +22,7 @@ class ViewController: UIViewController {
     
     var isSignIn: Bool = true
     
+    @IBOutlet var ScrollView: UIScrollView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -189,6 +188,8 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "SignIn", sender: nil)
         }
         
+        
+        
         //let imagen1 = UIImage(named: "tablita3.png")
         //let imageview = UIImageView(image; imagen1)
         //imageview.contentMode UIViewContentMode.scaleAspectFit
@@ -215,6 +216,46 @@ class ViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterKeyboardNotifications()
+    }
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ViewController.keyboardDidShow(notification:)),
+                                               name: NSNotification.Name.UIKeyboardDidShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ViewController.keyboardWillHide(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardDidShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        ScrollView.contentInset = contentInsets
+        ScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        ScrollView.contentInset = UIEdgeInsets.zero
+        ScrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
+    
     
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
         //Flip the boolean
