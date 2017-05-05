@@ -126,25 +126,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CA7F6E21E4D9E0200CF3146 = {
-			isa = PBXGroup;
-			children = (
-				2CA7F6ED1E4D9E0900CF3146 /* ProyectoAM */,
-				2CA7F6EC1E4D9E0900CF3146 /* Products */,
-				76C3E0341E809CF60077E36E /* Frameworks */,
-				E9574706979741CDB7C58A22 /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		2CA7F6EC1E4D9E0900CF3146 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2CA7F6EB1E4D9E0900CF3146 /* ProyectoAM.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2CA7F6ED1E4D9E0900CF3146 /* ProyectoAM */ = {
+		2ABF22731EBD46A900D890BA /* Calendario */ = {
 			isa = PBXGroup;
 			children = (
 				2A0A6ACA1E8226C000A79BBD /* FSCalendar.h */,
@@ -179,6 +161,32 @@
 				2A0A6AE71E8226C000A79BBD /* FSCalendarTransitionCoordinator.m */,
 				2A0A6AE81E8226C000A79BBD /* FSCalendarWeekdayView.h */,
 				2A0A6AE91E8226C000A79BBD /* FSCalendarWeekdayView.m */,
+			);
+			name = Calendario;
+			sourceTree = "<group>";
+		};
+		2CA7F6E21E4D9E0200CF3146 = {
+			isa = PBXGroup;
+			children = (
+				2CA7F6ED1E4D9E0900CF3146 /* ProyectoAM */,
+				2CA7F6EC1E4D9E0900CF3146 /* Products */,
+				76C3E0341E809CF60077E36E /* Frameworks */,
+				E9574706979741CDB7C58A22 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		2CA7F6EC1E4D9E0900CF3146 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7F6EB1E4D9E0900CF3146 /* ProyectoAM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CA7F6ED1E4D9E0900CF3146 /* ProyectoAM */ = {
+			isa = PBXGroup;
+			children = (
+				2ABF22731EBD46A900D890BA /* Calendario */,
 				2A0A6AC81E82268A00A79BBD /* FSCalendar */,
 				2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */,
 				2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */,
