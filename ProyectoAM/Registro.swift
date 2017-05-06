@@ -45,8 +45,6 @@ class Registro: UIViewController{
         print("Correo = \(Correo.text!)")
     }
     
-
-    
     @IBAction func botonClear(_ sender: Any) {
         //if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Sexo.text == "" || Telefono.text == "" || Correo.text == ""){
           //  loadDefaults()
