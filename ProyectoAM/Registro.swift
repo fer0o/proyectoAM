@@ -37,12 +37,12 @@ class Registro: UIViewController{
         defaults.set(Correo.text, forKey: "Correo")
         defaults.synchronize()
         
-        print("Nombre=\(Nombre.text)" as? String as? Any)
-        print("Apellido=\(Apellido.text)" as? Any)
-        print("Edad=\(Edad.text)" as? Any)
-        print("Sexo=\(Sexo.text)" as? Any)
-        print("Telefono=\(Telefono.text)" as? Any)
-        print("Correo=\(Correo.text)" as Any)
+        print("Nombre = \(Nombre.text!)")
+        print("Apellido = \(Apellido.text!)")
+        print("Edad = \(Edad.text!)")
+        print("Sexo = \(Sexo.text!)")
+        print("Telefono = \(Telefono.text!)")
+        print("Correo = \(Correo.text!)")
     }
     
 
