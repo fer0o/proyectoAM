@@ -25,7 +25,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var ScrollView: UIScrollView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var signInButton1: UIButton!
     
     var baseDatos: OpaquePointer? = nil

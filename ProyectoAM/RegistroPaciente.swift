@@ -29,20 +29,38 @@ class RegistroPaciente: UIViewController{
     @IBAction func botonRegistrar(_ sender: Any) {
         let defaults = UserDefaults.standard
         
-        defaults.set(Nombre.text, forKey: "Nombre")
-        defaults.set(Apellido.text, forKey: "Apellido")
-        defaults.set(Edad.text, forKey: "Edad")
-        defaults.set(Sexo.text, forKey: "Sexo")
-        defaults.set(Telefono.text, forKey: "Telefono")
-        defaults.set(Correo.text, forKey: "Correo")
-        defaults.synchronize()
+        //if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Cédula.text == "" || Telefono.text == "" || Correo.text == ""){
+        if(Nombre.text == "" && Apellido.text == "" && Edad.text == "" && Sexo.text == "" && Telefono.text == "" && Correo.text == ""){
+            //  loadDefaults()
+            createAlertRegisterFailedPatient()
+            //botonClear.setTitle("Limpiar Registro", forState: .Normal)
+        }
+        else {
+            
+            defaults.set(Nombre.text, forKey: "Nombre")
+            defaults.set(Apellido.text, forKey: "Apellido")
+            defaults.set(Edad.text, forKey: "Edad")
+            defaults.set(Sexo.text, forKey: "Sexo")
+            defaults.set(Telefono.text, forKey: "Telefono")
+            defaults.set(Correo.text, forKey: "Correo")
+            defaults.synchronize()
+            
+            print("Nombre = \(Nombre.text!)")
+            print("Apellido = \(Apellido.text!)")
+            print("Edad = \(Edad.text!)")
+            print("Sexo = \(Sexo.text!)")
+            print("Telefono = \(Telefono.text!)")
+            print("Correo = \(Correo.text!)")
+        }
+    }
+    
+    func createAlertRegisterFailedPatient(){
+        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Existen campos vacíos para registrarse.", preferredStyle: UIAlertControllerStyle.alert)
         
-        print("Nombre = \(Nombre.text!)")
-        print("Apellido = \(Apellido.text!)")
-        print("Edad = \(Edad.text!)")
-        print("Sexo = \(Sexo.text!)")
-        print("Telefono = \(Telefono.text!)")
-        print("Correo = \(Correo.text!)")
+        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaInicio.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaInicio, animated: true, completion: nil)
     }
     
     @IBAction func botonClear(_ sender: Any) {
