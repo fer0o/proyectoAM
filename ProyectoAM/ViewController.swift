@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func crearDoctores(){
         insertarDoctor("D01375758", "Luis Fernando Espinosa Elizalde", "Neurocirujano", "ITESM", 11375758, "55-6068-0871")
         insertarDoctor("D01169427", "Luis Felipe Espinosa Elizalde", "Ortodoncista", "LaSalle", 21169427, "55-8952-6655")
-        insertarDoctor("D01169661", "Allan Iván Ramírez Alanis", "Medico General", "UNAM", 41169661, "55-6451-3544")
+        insertarDoctor("D01169661", "Allan Iván Ramírez Alanis", "Otorrinolaringologia", "UNAM", 41169661, "55-6451-3544")
         insertarDoctor("D01169814", "Fernando Angel Medellin Cuevas", "Optometrista", "Ibero", 31169814, "55-1234-4567")
         insertarDoctor("D01018322", "Arturo Velazquez Ríos", "Pediatra", "Paramericana", 60108322, "55-9876-5412")
     }
