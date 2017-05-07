@@ -40,6 +40,8 @@
 		2CF9FA771E81C46300541094 /* RegistrationDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */; };
 		2CF9FA791E81C81300541094 /* LoginDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9FA781E81C81300541094 /* LoginDocViewController.swift */; };
 		607E308F1EBE657E0055498F /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E308E1EBE657E0055498F /* Registro.swift */; };
+		607E30911EBEA6CB0055498F /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E30901EBEA6CB0055498F /* ViewController2.swift */; };
+		607E30931EBEA7C80055498F /* RegistroPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E30921EBEA7C80055498F /* RegistroPaciente.swift */; };
 		76C3E0331E809CCD0077E36E /* Puente.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E0321E809CCD0077E36E /* Puente.m */; };
 		76C3E0361E809CF60077E36E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C3E0351E809CF60077E36E /* libsqlite3.tbd */; };
 		76C3E0381E809D6B0077E36E /* Agendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3E0371E809D6B0077E36E /* Agendar.swift */; };
@@ -102,6 +104,8 @@
 		2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDocViewController.swift; sourceTree = "<group>"; };
 		2CF9FA781E81C81300541094 /* LoginDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDocViewController.swift; sourceTree = "<group>"; };
 		607E308E1EBE657E0055498F /* Registro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
+		607E30901EBEA6CB0055498F /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		607E30921EBEA7C80055498F /* RegistroPaciente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroPaciente.swift; sourceTree = "<group>"; };
 		6CA869C85EF971A4DC827B05 /* Pods_ProyectoAM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoAM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C3E0311E809CCD0077E36E /* ProyectoAM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProyectoAM-Bridging-Header.h"; sourceTree = "<group>"; };
 		76C3E0321E809CCD0077E36E /* Puente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puente.m; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				2A0A6AC81E82268A00A79BBD /* FSCalendar */,
 				2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */,
 				2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */,
+				607E30901EBEA6CB0055498F /* ViewController2.swift */,
 				2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */,
 				2C59DC511E82E7360044C8EB /* Main.storyboard */,
 				2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */,
@@ -214,6 +219,7 @@
 				2A20C85B1EBA420E00B23783 /* CitasSinD.swift */,
 				2AA80EA01EBA890D00E03D2C /* Updates.swift */,
 				607E308E1EBE657E0055498F /* Registro.swift */,
+				607E30921EBEA7C80055498F /* RegistroPaciente.swift */,
 			);
 			path = ProyectoAM;
 			sourceTree = "<group>";
@@ -363,6 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				607E30911EBEA6CB0055498F /* ViewController2.swift in Sources */,
+				607E30931EBEA7C80055498F /* RegistroPaciente.swift in Sources */,
 				76C3E03A1E80B27A0077E36E /* CitasTV.swift in Sources */,
 				2A0A6AF31E8226C000A79BBD /* FSCalendarDelegationProxy.m in Sources */,
 				2A0A6AF21E8226C000A79BBD /* FSCalendarDelegationFactory.m in Sources */,

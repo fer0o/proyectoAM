@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  ViewController2.swift
 //  ProyectoAM
 //
-//  Created by Fernando Medellin on 10/02/17.
+//  Created by Allan Iván Ramírez Alanís on 5/6/17.
 //  Copyright © 2017 Fernando Medellin Cuevas. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import KeychainSwift
 
-class ViewController: UIViewController, UITextFieldDelegate{
+class ViewController2: UIViewController, UITextFieldDelegate{
     
     //var username = NSUserName()
     
@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var signInLabel: UILabel!
     
-    var isSignIn: Bool = true
+    var isSignIn2: Bool = true
     
     @IBOutlet var ScrollView: UIScrollView!
     @IBOutlet weak var emailField: UITextField!
@@ -138,17 +138,17 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     /*
      override func viewDidLoad(){
-        super.viewDidLoad()
+     super.viewDidLoad()
      }
      
      override func viewDidAppear(_ animated: Bool){
-        let keyChain = DataServices().keyChain
-        if keyChain.get("uid") != nil {
-            performSegue(withIdentifier: "SignIn", sender: nil)
-        }
+     let keyChain = DataServices().keyChain
+     if keyChain.get("uid") != nil {
+     performSegue(withIdentifier: "SignIn", sender: nil)
      }
- 
-    */
+     }
+     
+     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,7 +183,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
         
         let keyChain = DataService().keyChain
-
+        
         if keyChain.get("uid") != nil {
             performSegue(withIdentifier: "SignIn", sender: nil)
         }
@@ -259,11 +259,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
         //Flip the boolean
-        isSignIn = !isSignIn
+        isSignIn2 = !isSignIn2
         
         //Check the bool and set the buttons and labels
         
-        if isSignIn {
+        if isSignIn2 {
             signInLabel.text = "Iniciar Sesión"
             signInButton1.setTitle("Iniciar Sesión", for: .normal)
         }
@@ -280,79 +280,79 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }
     
     /*override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-    
-        if (segue.identifier == "MenuDoctor") {
-            var VC2 : VC2 = segue.destinationViewController as VC2
-            VC2.buttonTag = sender.tag
-            
-        }
-        if (segue.identifier == "RegistroDoctor") {
-            var VC2 : VC2 = segue.destinationViewController as VC2
-            VC2.buttonTag = sender.tag
-        }
-    }*/
+     
+     if (segue.identifier == "MenuDoctor") {
+     var VC2 : VC2 = segue.destinationViewController as VC2
+     VC2.buttonTag = sender.tag
+     
+     }
+     if (segue.identifier == "RegistroDoctor") {
+     var VC2 : VC2 = segue.destinationViewController as VC2
+     VC2.buttonTag = sender.tag
+     }
+     }*/
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         
         //Validation Email and Password
         
         if let email = emailField.text, let pass = passwordField.text {
-        
-        
-        if isSignIn {
-            if self.emailField.text == "" || self.passwordField.text == "" {
-                createAlertSigning()
-                print("Please enter email and password.")
-            }
-            else{
-            //Sign in the user with the Firebase
-            FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: { (user, error) in
-                //code
-                if let u = user{
-                    //User found
-                    self.performSegue(withIdentifier: "goToHome", sender: self)
+            
+            
+            if isSignIn2 {
+                if self.emailField.text == "" || self.passwordField.text == "" {
+                    createAlertSigning()
+                    print("Please enter email and password.")
                 }
                 else{
-                    self.createAlertLoginFailed()
-                    //Check error in show message.
-                    //self.createAlertSigning()
+                    //Sign in the user with the Firebase
+                    FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: { (user, error) in
+                        //code
+                        if let u = user{
+                            //User found
+                            self.performSegue(withIdentifier: "goToHome2", sender: self)
+                        }
+                        else{
+                            self.createAlertLoginFailed()
+                            //Check error in show message.
+                            //self.createAlertSigning()
+                        }
+                    })
                 }
-            })
-            }
-            
-        }
-        else {
-            emailField.isUserInteractionEnabled = false
-            passwordField.isUserInteractionEnabled = false
-            
-            //emailField.isEditable = false
-            //passwordField.isEditable = false
-            
-            emailField.isEnabled = false
-            passwordField.isEnabled = false
-            
-            performSegue(withIdentifier: "RegistroDoctor", sender: nil)
-            
-       /*     if self.emailField.text == "" || self.passwordField.text == "" {
-                createAlertRegister()
-                print("Please enter email and password.")
-            }
-            else{
-            //Register the user with the Firebase
-            FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
                 
-                if let u = user {
-                    //User is found, go to home screen
-                    self.createAlertRegisterSuccessful()
-                    //self.performSegue(withIdentifier: "goToHome", sender: self)
-                }
-                else{
-                    //Error: check error and show message.
-                    //self.createAlertRegister()
-                }
-            })
-            }*/
-        }
+            }
+            else {
+                emailField.isUserInteractionEnabled = false
+                passwordField.isUserInteractionEnabled = false
+                
+                //emailField.isEditable = false
+                //passwordField.isEditable = false
+                
+                emailField.isEnabled = false
+                passwordField.isEnabled = false
+                
+                performSegue(withIdentifier: "RegistroPaciente", sender: nil)
+                
+                /*     if self.emailField.text == "" || self.passwordField.text == "" {
+                 createAlertRegister()
+                 print("Please enter email and password.")
+                 }
+                 else{
+                 //Register the user with the Firebase
+                 FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
+                 
+                 if let u = user {
+                 //User is found, go to home screen
+                 self.createAlertRegisterSuccessful()
+                 //self.performSegue(withIdentifier: "goToHome", sender: self)
+                 }
+                 else{
+                 //Error: check error and show message.
+                 //self.createAlertRegister()
+                 }
+                 })
+                 }*/
+            }
         }
     }
     
@@ -391,7 +391,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }))
         self.present(alertaRegistro, animated: true, completion: nil)
     }
-
+    
     
     
     func CompleteSignIn (id: String){
@@ -426,24 +426,24 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
 }
 
-    /*override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
-        if(!isUserLoggedIn){
-            self.performSegue(withIdentifier: "loginView", sender: self)
-            //print el git esta muy malo 
-        }
-        self.performSegue(withIdentifier: "loginView", sender: self)
-    }
-    
-    @IBAction func logout(_ sender: AnyObject) {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        UserDefaults.standard.synchronize()
-        
-        self.performSegue(withIdentifier: "loginView", sender: self)
-    }*/
+/*override func didReceiveMemoryWarning() {
+ super.didReceiveMemoryWarning()
+ // Dispose of any resources that can be recreated.
+ }
+ 
+ override func viewDidAppear(_ animated: Bool) {
+ 
+ let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+ if(!isUserLoggedIn){
+ self.performSegue(withIdentifier: "loginView", sender: self)
+ //print el git esta muy malo
+ }
+ self.performSegue(withIdentifier: "loginView", sender: self)
+ }
+ 
+ @IBAction func logout(_ sender: AnyObject) {
+ UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+ UserDefaults.standard.synchronize()
+ 
+ self.performSegue(withIdentifier: "loginView", sender: self)
+ }*/
