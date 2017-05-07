@@ -29,7 +29,9 @@ class RegistroPaciente: UIViewController{
     @IBAction func botonRegistrar(_ sender: Any) {
         let defaults = UserDefaults.standard
         
-        //if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Cédula.text == "" || Telefono.text == "" || Correo.text == ""){
+        if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Sexo.text == "" || Telefono.text == "" || Correo.text == ""){
+            createAlertRegisterFailedPatient()
+        }
         if(Nombre.text == "" && Apellido.text == "" && Edad.text == "" && Sexo.text == "" && Telefono.text == "" && Correo.text == ""){
             //  loadDefaults()
             createAlertRegisterFailedPatient()

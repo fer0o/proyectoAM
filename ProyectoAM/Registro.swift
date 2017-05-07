@@ -29,7 +29,10 @@ class Registro: UIViewController{
     @IBAction func botonRegistrar(_ sender: Any) {
         let defaults = UserDefaults.standard
         
-        //if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Cédula.text == "" || Telefono.text == "" || Correo.text == ""){
+        if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Cédula.text == "" || Telefono.text == "" || Correo.text == ""){
+            createAlertRegisterFailed()
+        }
+        
         if(Nombre.text == "" && Apellido.text == "" && Edad.text == "" && Cédula.text == "" && Telefono.text == "" && Correo.text == ""){
             //  loadDefaults()
             createAlertRegisterFailed()
