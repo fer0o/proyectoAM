@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller3-->
         <scene sceneID="HdV-Hr-w85">
             <objects>
-                <viewController id="RN3-11-uRG" customClass="ViewController" customModule="ProyectoAM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RN3-11-uRG" customClass="ViewController3" customModule="ProyectoAM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2hX-WS-l3a"/>
                         <viewControllerLayoutGuide type="bottom" id="qTk-yy-2YZ"/>
@@ -174,7 +174,7 @@
         <!--View Controller-->
         <scene sceneID="4cZ-r3-QfS">
             <objects>
-                <viewController id="jdL-ll-hzd" sceneMemberID="viewController">
+                <viewController id="jdL-ll-hzd" customClass="ViewController" customModule="ProyectoAM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kqS-sb-faq"/>
                         <viewControllerLayoutGuide type="bottom" id="pWg-PO-PCD"/>
@@ -314,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zrp-6u-kxS" customClass="FSCalendar">
-                                <rect key="frame" x="16" y="28" width="343" height="402"/>
+                                <rect key="frame" x="16" y="72" width="343" height="358"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cNS-HQ-DHD" id="qcq-Hh-eul"/>
@@ -420,9 +420,9 @@
                                         <rect key="frame" x="20" y="500" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-hL-6QU">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-hL-6QU">
                                         <rect key="frame" x="86.5" y="20" width="212.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -434,8 +434,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escuela" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxs-KV-Q0q">
-                                        <rect key="frame" x="20" y="198" width="60" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxs-KV-Q0q">
+                                        <rect key="frame" x="20" y="198" width="91" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -576,7 +576,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RN3-11-uRG" kind="show" id="vdW-Cq-IqS"/>
+                                    <segue destination="RN3-11-uRG" kind="show" identifier="returnLoginDoctor" id="vdW-Cq-IqS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -596,6 +596,7 @@
                             <constraint firstItem="wow-Hz-Oh8" firstAttribute="top" secondItem="mrN-Tu-aDA" secondAttribute="bottom" constant="8" symbolic="YES" id="W5H-aY-Lhm"/>
                             <constraint firstItem="BjY-UQ-G1y" firstAttribute="top" secondItem="kuh-lo-6dK" secondAttribute="bottom" constant="8" symbolic="YES" id="rsC-p6-Qu5"/>
                             <constraint firstItem="BjY-UQ-G1y" firstAttribute="leading" secondItem="Zns-JN-7Db" secondAttribute="leadingMargin" constant="-20" id="uU6-Vy-DDf"/>
+                            <constraint firstItem="y0w-xd-D8b" firstAttribute="width" secondItem="wow-Hz-Oh8" secondAttribute="width" id="uqY-KH-Ihq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -765,7 +766,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-2k-K1S">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaCitas" textLabel="09T-fZ-PHJ" detailTextLabel="9yo-rE-f1z" style="IBUITableViewCellStyleSubtitle" id="Qo7-gC-339">
@@ -1046,7 +1047,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v4E-qo-31z">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noCitaP" textLabel="6Mx-XX-g9C" detailTextLabel="oNN-Fc-L5G" style="IBUITableViewCellStyleSubtitle" id="RR8-jT-zGs">
@@ -1372,7 +1373,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-S3-D3Q">
-                                <rect key="frame" x="0.0" y="20" width="375" height="377"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celdaDoc" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaDoc" textLabel="kOV-Ab-5mi" detailTextLabel="39c-AD-Skx" style="IBUITableViewCellStyleSubtitle" id="8UR-RF-EFr">
@@ -1406,13 +1407,13 @@
                                 </connections>
                             </tableView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="46D-1n-Qsm">
-                                <rect key="frame" x="0.0" y="405" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="356" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="511744485.14562601">
                                     <!--2017-03-20 23:14:45 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNU-UU-Xnm">
-                                <rect key="frame" x="144" y="629" width="86" height="30"/>
+                                <rect key="frame" x="144" y="580" width="86" height="30"/>
                                 <state key="normal" title="Agregar Cita"/>
                                 <connections>
                                     <action selector="agregarCita:" destination="O4z-gv-1Ug" eventType="touchUpInside" id="uTV-SO-vg3"/>
@@ -2043,7 +2044,7 @@
                                         <rect key="frame" x="20" y="451" width="342" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yo6-GX-ch7">
                                         <rect key="frame" x="20" y="49" width="342" height="30"/>
@@ -2219,8 +2220,8 @@
         <image name="tablita3" width="700" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vdW-Cq-IqS"/>
         <segue reference="cRL-ah-GcM"/>
-        <segue reference="4si-xg-7D5"/>
+        <segue reference="34C-0c-8w7"/>
+        <segue reference="vdW-Cq-IqS"/>
     </inferredMetricsTieBreakers>
 </document>

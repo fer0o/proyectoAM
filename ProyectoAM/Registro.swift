@@ -7,9 +7,16 @@
 //
 //  Registro de Doctores
 
+//iPhone SE path DB: /Users/chiefmaster25/Library/Developer/CoreSimulator/Devices/7A83422C-515D-4692-A6C0-D068C7313D95/data/Containers/Data/Application/04250436-F2B4-4F60-BB4E-95BDBEA43001/Documents/agendaMedica.txt
+
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class Registro: UIViewController{
+    
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var id: UITextField!
     
@@ -28,7 +35,6 @@ class Registro: UIViewController{
     @IBOutlet var passwordField: UITextField!
     
     @IBAction func generateRandom(_ sender: Any) {
-        
         let n = Int(arc4random_uniform(10000))
         //let n = Int(arc4random_uniform(0-10000)+10000)
         //let a = Int(arc4random(0 - 10000)+10000)
@@ -60,15 +66,11 @@ class Registro: UIViewController{
     }
     
     func crearTablaDoctores(nombreTabla: String) -> Bool {
-        //let sqlCreaTabla = "CREATE TABLE DOCTORES" + "(NOMINA TEXT, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT, PRIMARY KEY(NOMINA))"/* INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, UNIVERSIDAD, CEDULA, TELEFONO)*/
-        //CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, SALARIO DECIMAL)" //ES DECIMAL EL ULTIMO.
-        
         let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT, EMAIL TEXT, PASSWORD TEXT)"
-        //let sqlCreaTabla = "CREATE TABLE DOCTORES" + "(NOMINA TEXT, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT, PRIMARY KEY(NOMINA))"/* INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, UNIVERSIDAD, CEDULA, TELEFONO)*/
-        //CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, SALARIO DECIMAL)" //ES DECIMAL EL ULTIMO.
         
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
+            print ("Tabla Creada")
             return true
         }
         else {
@@ -77,7 +79,6 @@ class Registro: UIViewController{
             print("Error: \(msg)")
             return false
         }
-
     }
     
     /*func crearTablaDoctores(nombreTabla: String) -> Bool {
@@ -95,14 +96,14 @@ class Registro: UIViewController{
      }
      }*/
     
-    func insertarDoctor(/*_ nomina: String, _ nombre: String, _ especialidad: String, _ escuela:String, _ cedula: Int, _ telefono: String*/) {
+    /*func insertarDoctor(/*_ nomina: String, _ nombre: String, _ especialidad: String, _ escuela:String, _ cedula: Int, _ telefono: String*/) {
         let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) " + "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
         //"INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO) "
         //+ "VALUES ('\(nomina)', '\(nombre)', '\(especialidad)', '\(escuela)', \(cedula), '\(telefono)')"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK { print("Error al insertar doctor")
         }
-    }
+    }*/
     
     func consultarDoctores(){
         let sqlConsulta = "SELECT * FROM DOCTORES"
@@ -127,6 +128,7 @@ class Registro: UIViewController{
         let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(ID TEXT PRIMARY KEY, NOMBRE TEXT, SEXO TEXT, EDAD DECIMAL, FECHANACIMIENTO TEXTO, DIRECCION TEXT, TELEFONO TEXT, HISTORIAL TEXT)"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
+            
             return true
         } else {
             sqlite3_close(baseDatos)
@@ -136,19 +138,7 @@ class Registro: UIViewController{
         }
     }
     
-    @IBAction func botonRegistrar(_ sender: Any) {
-        //let defaults = UserDefaults.standard
-        
-        let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) "
-            + "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
-            //let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) "
-                //+ "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
-        var error: UnsafeMutablePointer<Int8>? = nil
-            
-        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK {
-            print("Error al insertar datos")
-        }
-        
+    func checkFields1(){
         if(id.text == "" || nombre.text == "" || especialidad.text == "" || escuela.text == "" || cedula.text == "" || telefono.text == "" || emailField.text == "" || passwordField.text == ""){
             createAlertRegisterFailed()
         }
@@ -158,12 +148,74 @@ class Registro: UIViewController{
             createAlertRegisterFailed()
             //botonClear.setTitle("Limpiar Registro", forState: .Normal)
         }
+    }
+    
+    @IBAction func botonRegistrar(_ sender: Any) {
+        //let defaults = UserDefaults.standard
+        checkFields1()
+        
+    if abrirBaseDatos(){
+            print("ok")
+            //consultarBaseDatos()
+            //if crearTablaDoctores(nombreTabla: "DOCTORES"){
+            //crearDoctores()
+            consultarDoctores()
+            //sqlite3_close(baseDatos)
+            //}
+            /*else{
+             print("No se puede crear la doctores")
+             }
+             if crearTablaPacientes(nombreTabla: "PACIENTES"){
+             //insertarPaciente()
+             }
+             else{
+             print("No se puede crear la pacientes")*/
+ 
+        
+        let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) " + "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
+            //let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) "
+                //+ "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
+        
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK {
+            print("Error al insertar datos")
+            print(error as Any)
+            print(sqlInserta)
+        }
+        else{
+            print("Registro Exitoso")
+            appDelegate.idDoctor = id.text!
+        }
+        
+    } else{
+            print("Error al abrir BD")
+        }
+        sqlite3_close(baseDatos)
+        //Register the user with the Firebase
+        if let email = emailField.text, let pass = passwordField.text {
+            FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
+                if let u = user {
+                    //User is found, go to home screen
+                    
+                    print("Registro exitoso.")
+                    //self.performSegue(withIdentifier: "goToHome", sender: self)
+                }
+                else{
+                    //Error: check error and show message.
+                    //self.createAlertRegister()
+                }
+            })
+        }
+        
+        self.createAlertRegisterSuccessful()
+        
             
             /*let sqlInserta = "INSERT INTO EMPLEADOS (NOMINA, NOMBRE, SALARIO) " + "VALUES ('\(nomina.text!)', '\(Nombre.text!)', \(especialidad.text!))"
             //'\(nomina)', '\(nombre)', '\(especialidad)', '\(escuela)', \(cedula), '\(telefono)'
             var error: UnsafeMutablePointer<Int8>? = nil
             
-            if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK {
+            if sqlite3_exec(baseDatos, sqlI
+         nserta, nil, nil, &error) != SQLITE_OK {
                 print("Error al insertar datos")
             }*/
             /*defaults.set(id.text, forKey: "id")
@@ -185,6 +237,20 @@ class Registro: UIViewController{
             print("Telefono = \(telefono.text!)")
             print("Correo = \(emailField.text!)")
             print("Contraseña = \(passwordField.text!)")
+    }
+    
+    func createAlertRegisterSuccessful(){
+        let alertaInicio  = UIAlertController(title: "Registro Exitoso", message: "Tu registro está completo, por favor inicia sesión.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //alerta.addAction(UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:  { action in self.performSegue(withIdentifier: "returnLoginDoctor", sender: self)})
+        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            //alertaInicio.performSegue(withIdentifier: "returnLoginDoctor", sender: self)
+            //("returnLoginDoctor", animated: self)
+            alertaInicio.dismiss(animated:true, completion: nil)
+        }))
+        
+        //self.present("returnLoginDoctor", animated: self)
+        self.present(alertaInicio, animated: true, completion: nil)
     }
     
     func createAlertRegisterFailed(){
@@ -229,26 +295,42 @@ class Registro: UIViewController{
         passwordField.text = defaults.object (forKey: "contraseña") as? String
     }*/
     
+    func borrarRegistro() {
+        let query = "DROP TABLE DOCTORES"
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, query, nil, nil, &error) == SQLITE_OK {
+            print("Registro borrado")
+        } else {
+            print("Error al borrar")
+            print(error!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         //let sqlCreaTabla = "CREATE TABLE DOCTORES" + "(NOMINA TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT, PRIMARY KEY(NOMINA))"/* INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, UNIVERSIDAD, CEDULA, TELEFONO) VALUES ('','','','','','')"*/
         
+        //Para borrar tablas de la BD, SIEMPRE COMENTARLA
+        //borrarRegistro()
+        
         //esta funcion se ejecuta luego luego que incia la aplicacion y crea la base de datos, aunque ya existe solo la instancia de nuevo cargando los datos anteriores
-        let preferencias = UserDefaults.standard
-        preferencias.synchronize()
-        if let flag = preferencias.string(forKey: "true"){
-            print("Ya existe BD")
-        } else{
+        //let preferencias = UserDefaults.standard
+        //preferencias.synchronize()
+        //if let flag = preferencias.string(forKey: "true"){
+        //    print("Ya existe BD")
+        //}
+        //else{
             if abrirBaseDatos(){
                 print("ok")
                 //consultarBaseDatos()
-                if crearTablaDoctores(nombreTabla: "DOCTORES"){
+                //if crearTablaDoctores(nombreTabla: "DOCTORES"){
                     //crearDoctores()
                     consultarDoctores()
-                }
-                else{
+                    //sqlite3_close(baseDatos)
+                //}
+                /*else{
                     print("No se puede crear la doctores")
                 }
                 if crearTablaPacientes(nombreTabla: "PACIENTES"){
@@ -256,14 +338,14 @@ class Registro: UIViewController{
                 }
                 else{
                     print("No se puede crear la pacientes")
-                }
+                }*/
             } else{
                 print("Error al abrir BD")
             }
             sqlite3_close(baseDatos)
-            preferencias.set("iniciado", forKey: "true")
-            preferencias.synchronize()
-        }
+            //preferencias.set("iniciado", forKey: "true")
+            //preferencias.synchronize()
+        //}
     }
     
     override func didReceiveMemoryWarning() {

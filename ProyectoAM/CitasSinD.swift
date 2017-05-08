@@ -137,6 +137,7 @@ class CitasSinD: UIViewController, UITableViewDelegate, UITableViewDataSource{
         ids.removeAll()
         nombres.removeAll()
         fechas.removeAll()
+        print("\(appDelegate.idDoctor)")
         if abrirBaseDatos(){
             print("ok")
             consultarBaseDatos()

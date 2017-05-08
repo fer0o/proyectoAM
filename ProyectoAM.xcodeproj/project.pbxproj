@@ -39,6 +39,7 @@
 		2CA7F6F91E4D9E0A00CF3146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */; };
 		2CF9FA771E81C46300541094 /* RegistrationDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */; };
 		2CF9FA791E81C81300541094 /* LoginDocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9FA781E81C81300541094 /* LoginDocViewController.swift */; };
+		60797D6E1EC10CE5000A30AF /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60797D6D1EC10CE5000A30AF /* ViewController3.swift */; };
 		607E308F1EBE657E0055498F /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E308E1EBE657E0055498F /* Registro.swift */; };
 		607E30911EBEA6CB0055498F /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E30901EBEA6CB0055498F /* ViewController2.swift */; };
 		607E30931EBEA7C80055498F /* RegistroPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E30921EBEA7C80055498F /* RegistroPaciente.swift */; };
@@ -103,6 +104,7 @@
 		2CA7F6FA1E4D9E0A00CF3146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF9FA761E81C46300541094 /* RegistrationDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDocViewController.swift; sourceTree = "<group>"; };
 		2CF9FA781E81C81300541094 /* LoginDocViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDocViewController.swift; sourceTree = "<group>"; };
+		60797D6D1EC10CE5000A30AF /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		607E308E1EBE657E0055498F /* Registro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		607E30901EBEA6CB0055498F /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		607E30921EBEA7C80055498F /* RegistroPaciente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroPaciente.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				2CA7F6EE1E4D9E0900CF3146 /* AppDelegate.swift */,
 				2CA7F6F01E4D9E0900CF3146 /* ViewController.swift */,
 				607E30901EBEA6CB0055498F /* ViewController2.swift */,
+				60797D6D1EC10CE5000A30AF /* ViewController3.swift */,
 				2CA7F6F51E4D9E0A00CF3146 /* Assets.xcassets */,
 				2C59DC511E82E7360044C8EB /* Main.storyboard */,
 				2CA7F6F71E4D9E0A00CF3146 /* LaunchScreen.storyboard */,
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607E30911EBEA6CB0055498F /* ViewController2.swift in Sources */,
+				60797D6E1EC10CE5000A30AF /* ViewController3.swift in Sources */,
 				607E30931EBEA7C80055498F /* RegistroPaciente.swift in Sources */,
 				76C3E03A1E80B27A0077E36E /* CitasTV.swift in Sources */,
 				2A0A6AF31E8226C000A79BBD /* FSCalendarDelegationProxy.m in Sources */,

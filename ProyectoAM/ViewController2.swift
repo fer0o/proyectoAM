@@ -51,11 +51,14 @@ class ViewController2: UIViewController, UITextFieldDelegate{
     }
     
     func crearTablaDoctores(nombreTabla: String) -> Bool {
-        let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT)"
+        let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT, EMAIL TEXT, PASSWORD TEXT)"
+        
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
+            print ("Tabla Creada")
             return true
-        } else {
+        }
+        else {
             sqlite3_close(baseDatos)
             let msg = String.init(cString: error!)
             print("Error: \(msg)")
@@ -76,20 +79,25 @@ class ViewController2: UIViewController, UITextFieldDelegate{
         }
     }
     
-    func crearDoctores(){
+    /*func crearDoctores(){
         insertarDoctor("D01375758", "Luis Fernando Espinosa Elizalde", "Neurocirujano", "ITESM", 11375758, "55-6068-0871")
         insertarDoctor("D01169427", "Luis Felipe Espinosa Elizalde", "Ortodoncista", "LaSalle", 21169427, "55-8952-6655")
         insertarDoctor("D01169661", "Allan Iván Ramírez Alanis", "Medico General", "UNAM", 41169661, "55-6451-3544")
         insertarDoctor("D01169814", "Fernando Angel Medellin Cuevas", "Optometrista", "Ibero", 31169814, "55-1234-4567")
         insertarDoctor("D01018322", "Arturo Velazquez Ríos", "Pediatra", "Paramericana", 60108322, "55-9876-5412")
-    }
+    }*/
     
-    func insertarDoctor(_ nomina: String, _ nombre: String, _ especialidad: String, _ escuela:String, _ cedula: Int, _ telefono: String) {
-        let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO) "
-            + "VALUES ('\(nomina)', '\(nombre)', '\(especialidad)', '\(escuela)', \(cedula), '\(telefono)')"
-        var error: UnsafeMutablePointer<Int8>? = nil
-        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK { print("Error al insertar doctor")
-        }
+    func insertarDoctor(/*_ nomina: String, _ nombre: String, _ especialidad: String, _ escuela:String, _ cedula: Int, _ telefono: String*/) {
+        //let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) " + "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
+        //let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO, EMAIL, PASSWORD) "
+        //+ "VALUES ('\(id.text!)', '\(nombre.text!)', '\(especialidad.text!)', '\(escuela.text!)', \(cedula.text!), '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)')"
+        //var error: UnsafeMutablePointer<Int8>? = nil
+        //if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK {
+            //print("Error al insertar datos")
+        //}
+        //else{
+        //    print("Registro Exitoso")
+        //}
     }
     
     func consultarDoctores(){
@@ -103,7 +111,9 @@ class ViewController2: UIViewController, UITextFieldDelegate{
                 let escuela = String.init(cString: sqlite3_column_text(declaracion, 3))
                 let cedula = String.init(cString: sqlite3_column_text(declaracion, 4))
                 let telefono = String.init(cString: sqlite3_column_text(declaracion, 5))
-                print("\(nomina), \(nombre), \(especialidad), \(escuela), \(cedula), \(telefono)")
+                let email = String.init(cString: sqlite3_column_text(declaracion, 6))
+                let password = String.init(cString: sqlite3_column_text(declaracion, 7))
+                print("\(nomina), \(nombre), \(especialidad), \(escuela), \(cedula), \(telefono), \(email), \(password)")
             }
         }
     }
@@ -162,7 +172,7 @@ class ViewController2: UIViewController, UITextFieldDelegate{
                 print("ok")
                 //consultarBaseDatos()
                 if crearTablaDoctores(nombreTabla: "DOCTORES"){
-                    crearDoctores()
+                    //crearDoctores()
                     consultarDoctores()
                 }
                 else{

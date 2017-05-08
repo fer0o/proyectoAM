@@ -32,7 +32,7 @@ class Updates: UIViewController{
         return nil
     }
     
-    func crearTablaDoctores(nombreTabla: String) -> Bool {
+    /*func crearTablaDoctores(nombreTabla: String) -> Bool {
         let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT)"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
@@ -43,7 +43,7 @@ class Updates: UIViewController{
             print("Error: \(msg)")
             return false
         }
-    }
+    }*/
     
     func crearTablaPacientes(nombreTabla: String) -> Bool {
         let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(ID TEXT PRIMARY KEY, NOMBRE TEXT, SEXO TEXT, EDAD DECIMAL, FECHANACIMIENTO TEXTO, DIRECCION TEXT, TELEFONO TEXT, HISTORIAL TEXT)"
@@ -58,13 +58,13 @@ class Updates: UIViewController{
         }
     }
     
-    func crearDoctores(){
+    /*func crearDoctores(){
         insertarDoctor("D01375758", "Luis Fernando Espinosa Elizalde", "Neurocirujano", "ITESM", 11375758, "55-6068-0871")
         insertarDoctor("D01169427", "Luis Felipe Espinosa Elizalde", "Ortodoncista", "LaSalle", 21169427, "55-8952-6655")
         insertarDoctor("D01169661", "Allan Iván Ramírez Alanis", "Medico General", "UNAM", 41169661, "55-6451-3544")
         insertarDoctor("D01169814", "Fernando Angel Medellin Cuevas", "Optometrista", "Ibero", 31169814, "55-1234-4567")
         insertarDoctor("D01018322", "Arturo Velazquez Ríos", "Pediatra", "Paramericana", 60108322, "55-9876-5412")
-    }
+    }*/
     
     func insertarDoctor(_ nomina: String, _ nombre: String, _ especialidad: String, _ escuela:String, _ cedula: Int, _ telefono: String) {
         let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO) "
