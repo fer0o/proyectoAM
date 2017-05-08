@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
-            print ("Tabla DOPctor Creada")
+            print ("Tabla Doctor Creada")
             return true
         }
         else {
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(ID TEXT PRIMARY KEY, NOMBRE TEXT, SEXO TEXT, EDAD DECIMAL, FECHANACIMIENTO TEXTO, DIRECCION TEXT, TELEFONO TEXT, CORREO TEXT, CONTRASEÑA TEXT, HISTORIAL TEXT)"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
-            print ("Tabla PAPciendte Creada")
+            print ("Tabla Paciente Creada")
             return true
         } else {
             sqlite3_close(baseDatos)

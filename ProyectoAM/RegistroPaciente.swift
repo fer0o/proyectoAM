@@ -10,6 +10,8 @@ import UIKit
 
 class RegistroPaciente: UIViewController{
     
+    @IBOutlet var id: UITextField!
+    
     @IBOutlet var Nombre: UITextField!
     
     @IBOutlet var Apellido: UITextField!
@@ -23,6 +25,13 @@ class RegistroPaciente: UIViewController{
     @IBOutlet var Correo: UITextField!
     
     var baseDatos: OpaquePointer? = nil
+    
+    @IBAction func generateRandom(_ sender: Any) {
+        let n = Int(arc4random_uniform(10000))
+        //let n = Int(arc4random_uniform(0-10000)+10000)
+        //let a = Int(arc4random(0 - 10000)+10000)
+        id.text = "D\(n)"
+    }
     
     @IBAction func botonRegistrar(_ sender: Any) {
         let defaults = UserDefaults.standard

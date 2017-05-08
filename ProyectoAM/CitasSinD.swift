@@ -16,7 +16,6 @@ class CitasSinD: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var ids = [String] ()
     @IBOutlet weak var tabla: UITableView!
     
-    
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         updateCita(indexPath.row)
         fechas.remove(at: indexPath.row)
