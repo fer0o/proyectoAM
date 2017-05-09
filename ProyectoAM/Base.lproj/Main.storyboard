@@ -745,7 +745,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ogx-Ow-Tt4">
                                 <rect key="frame" x="16" y="7" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Regresar"/>
+                                <state key="normal" title="Cerrar Sesión"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -962,7 +962,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fernando Ángel Medellín Cuevas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-lw-Isp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fernando Ángel Medellín Cuevas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-lw-Isp">
                                 <rect key="frame" x="0.0" y="178" width="251" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -974,7 +974,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luis Fernando Espinosa Elizalde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-d2-aLL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luis Fernando Espinosa Elizalde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-d2-aLL">
                                 <rect key="frame" x="0.0" y="291" width="245" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1019,6 +1019,7 @@
                             <constraint firstAttribute="trailing" secondItem="Lcr-fV-ahr" secondAttribute="trailing" id="SrS-Dy-Yu1"/>
                             <constraint firstItem="DgP-d2-aLL" firstAttribute="leading" secondItem="ace-fg-icT" secondAttribute="leading" id="UaG-P8-1dK"/>
                             <constraint firstItem="DgP-d2-aLL" firstAttribute="top" secondItem="PnK-lw-Isp" secondAttribute="bottom" constant="92" id="Xz9-ON-6f3"/>
+                            <constraint firstItem="ncu-1e-IiB" firstAttribute="leading" secondItem="DgP-d2-aLL" secondAttribute="trailing" constant="41" id="ZMG-Q3-3mF"/>
                             <constraint firstItem="Egf-8w-EvB" firstAttribute="top" secondItem="DgP-d2-aLL" secondAttribute="bottom" constant="103" id="fK0-to-lty"/>
                             <constraint firstItem="Lcr-fV-ahr" firstAttribute="top" secondItem="7XD-54-UPU" secondAttribute="bottom" constant="43" id="fVK-c8-gwX"/>
                             <constraint firstItem="NMt-ip-zdx" firstAttribute="top" secondItem="7XD-54-UPU" secondAttribute="bottom" id="fhg-1G-yag"/>
@@ -1027,6 +1028,7 @@
                             <constraint firstItem="PnK-lw-Isp" firstAttribute="leading" secondItem="ace-fg-icT" secondAttribute="leading" id="kMm-hq-R0t"/>
                             <constraint firstAttribute="bottomMargin" secondItem="NMt-ip-zdx" secondAttribute="bottom" constant="-10" id="kNr-YI-3PI"/>
                             <constraint firstAttribute="trailing" secondItem="n6Z-MT-9tH" secondAttribute="trailing" constant="-1" id="qhx-7j-nh7"/>
+                            <constraint firstItem="kLP-3q-Ins" firstAttribute="leading" secondItem="PnK-lw-Isp" secondAttribute="trailing" constant="32" id="w4P-dd-gPf"/>
                             <constraint firstItem="PnK-lw-Isp" firstAttribute="top" secondItem="unk-kj-n6c" secondAttribute="bottom" constant="94" id="y8F-dm-Ci2"/>
                         </constraints>
                     </view>
@@ -1592,7 +1594,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MPv-v3-dwc">
                                 <rect key="frame" x="16" y="7" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Regresar"/>
+                                <state key="normal" title="Cerrar Sesión"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -2464,7 +2466,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L81-nI-9fn"/>
-        <segue reference="34C-0c-8w7"/>
         <segue reference="vdW-Cq-IqS"/>
+        <segue reference="34C-0c-8w7"/>
     </inferredMetricsTieBreakers>
 </document>

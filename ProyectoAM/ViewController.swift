@@ -291,10 +291,10 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        emailField.resignFirstResponder()
-        passwordField.resignFirstResponder()
-    }
+    //override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    //    emailField.resignFirstResponder()
+    //    passwordField.resignFirstResponder()
+    //}
     
     /*override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
     
