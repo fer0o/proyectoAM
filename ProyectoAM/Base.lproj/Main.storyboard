@@ -1467,7 +1467,7 @@
         <!--MenuPaciente-->
         <scene sceneID="P6Z-eV-lt3">
             <objects>
-                <viewController title="MenuPaciente" id="8w0-ZU-3Vy" sceneMemberID="viewController">
+                <viewController title="MenuPaciente" id="8w0-ZU-3Vy" customClass="SignOutCode" customModule="ProyectoAM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pf0-Ko-52u"/>
                         <viewControllerLayoutGuide type="bottom" id="HEJ-nt-EHI"/>
@@ -1590,11 +1590,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lWl-yh-wHj">
+                        <barButtonItem key="backBarButtonItem" title="Regresar" id="SXU-4k-fgc"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="WY9-tr-gns">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MPv-v3-dwc">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MPv-v3-dwc">
                                 <rect key="frame" x="16" y="7" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cerrar Sesión"/>
+                                <connections>
+                                    <action selector="cerrarSesion:" destination="8w0-ZU-3Vy" eventType="touchUpInside" id="oo0-SM-uQc"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -2466,7 +2470,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L81-nI-9fn"/>
+        <segue reference="4si-xg-7D5"/>
         <segue reference="vdW-Cq-IqS"/>
-        <segue reference="34C-0c-8w7"/>
     </inferredMetricsTieBreakers>
 </document>
