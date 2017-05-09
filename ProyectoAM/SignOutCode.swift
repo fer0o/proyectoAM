@@ -17,6 +17,22 @@ class SignOutCode: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func cerrarSesionPaciente(_ sender: Any) {
+        let firebaseAuth = FIRAuth.auth()
+        do{
+            try firebaseAuth?.signOut()
+            print("Cierre de Sesión completo")
+        }
+        catch let signOutError as NSError {
+            print("No se pudo cerrar sesión...", signOutError)
+        }
+        DataService().keyChain.delete("uid")
+        //KeychainSwift().delete("uid")
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     @IBAction func cerrarSesion(_ sender: Any) {
         let firebaseAuth = FIRAuth.auth()
