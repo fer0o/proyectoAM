@@ -14,6 +14,8 @@ import KeychainSwift
 
 class ViewController2: UIViewController, UITextFieldDelegate{
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     //var username = NSUserName()
     
     @IBOutlet weak var signInSelector: UISegmentedControl!
@@ -163,34 +165,34 @@ class ViewController2: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let preferencias = UserDefaults.standard
-        preferencias.synchronize()
-        if let flag = preferencias.string(forKey: "true"){
-            print("Ya existe BD")
-        } else{
+        //let preferencias = UserDefaults.standard
+        //preferencias.synchronize()
+        //if let flag = preferencias.string(forKey: "true"){
+        //    print("Ya existe BD")
+        //} else{
             if abrirBaseDatos(){
                 print("ok")
                 //consultarBaseDatos()
-                if crearTablaDoctores(nombreTabla: "DOCTORES"){
+                //if crearTablaDoctores(nombreTabla: "DOCTORES"){
                     //crearDoctores()
-                    consultarDoctores()
-                }
-                else{
-                    print("No se puede crear la doctores")
-                }
-                if crearTablaPacientes(nombreTabla: "PACIENTES"){
-                    insertarPaciente()
-                }
-                else{
-                    print("No se puede crear la pacientes")
-                }
+                //    consultarDoctores()
+                //}
+                //else{
+                //    print("No se puede crear la doctores")
+                //}
+                //if crearTablaPacientes(nombreTabla: "PACIENTES"){
+                //    insertarPaciente()
+                //}
+                //else{
+                //    print("No se puede crear la pacientes")
+                //}
             } else{
                 print("Error al abrir BD")
             }
             sqlite3_close(baseDatos)
-            preferencias.set("iniciado", forKey: "true")
-            preferencias.synchronize()
-        }
+            //preferencias.set("iniciado", forKey: "true")
+            //preferencias.synchronize()
+        //}
         
         let keyChain = DataService().keyChain
         
@@ -302,14 +304,32 @@ class ViewController2: UIViewController, UITextFieldDelegate{
      }
      }*/
     
+    func sacarID(_ email: String){
+        if abrirBaseDatos(){
+            print("ok")
+            //print(email)
+            let sqlConsulta = "SELECT ID FROM PACIENTES WHERE CORREO = '\(email)'"
+            var declaracion: OpaquePointer? = nil
+            if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+                while sqlite3_step(declaracion) == SQLITE_ROW {
+                    appDelegate.idPaciente  = String.init(cString: sqlite3_column_text(declaracion, 0))
+                    print(appDelegate.idPaciente)
+                }
+            }
+        } else{
+            print("Error al abrir BD")
+        }
+        sqlite3_close(baseDatos)
+        
+    }
+    
     @IBAction func signInButtonTapped(_ sender: UIButton) {
-        
         //Validation Email and Password
-        
         if let email = emailField.text, let pass = passwordField.text {
             
-            
             if isSignIn2 {
+                
+                sacarID(emailField.text!)
                 if self.emailField.text == "" || self.passwordField.text == "" {
                     createAlertSigning()
                     print("Please enter email and password.")
@@ -320,7 +340,9 @@ class ViewController2: UIViewController, UITextFieldDelegate{
                         //code
                         if let u = user{
                             //User found
+                            self.sacarID(self.emailField.text!)
                             self.performSegue(withIdentifier: "goToHome2", sender: self)
+                            
                         }
                         else{
                             self.createAlertLoginFailed()

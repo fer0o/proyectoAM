@@ -170,11 +170,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let preferencias = UserDefaults.standard
-        //preferencias.synchronize()
-        //if let flag = preferencias.string(forKey: "true"){
-        //    print("Ya existe BD")
-        //} else{
+        let preferencias = UserDefaults.standard
+        preferencias.synchronize()
+        if let flag = preferencias.string(forKey: "true"){
+            print("Ya existe BD")
+        } else{
             if abrirBaseDatos(){
                 print("ok")
                 //consultarBaseDatos()
@@ -195,9 +195,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 print("Error al abrir BD")
             }
             sqlite3_close(baseDatos)
-            //preferencias.set("iniciado", forKey: "true")
-            //preferencias.synchronize()
-        //}
+            preferencias.set("iniciado", forKey: "true")
+            preferencias.synchronize()
+        }
         
         let keyChain = DataService().keyChain
 

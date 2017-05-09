@@ -14,6 +14,8 @@ import KeychainSwift
 
 class ViewController3: UIViewController, UITextFieldDelegate{
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     //var username = NSUserName()
     
     @IBOutlet weak var signInSelector: UISegmentedControl!
@@ -171,16 +173,16 @@ class ViewController3: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let preferencias = UserDefaults.standard
-        preferencias.synchronize()
-        if let flag = preferencias.string(forKey: "true"){
-            print("Ya existe BD")
-        }
-        else{
+        //let preferencias = UserDefaults.standard
+        //preferencias.synchronize()
+        //if let flag = preferencias.string(forKey: "true"){
+        //    print("Ya existe BD")
+        //}
+        //else{
             if abrirBaseDatos(){
                 print("ok")
             //consultarBaseDatos()
-                if crearTablaDoctores(nombreTabla: "DOCTORES"){
+            /*    if crearTablaDoctores(nombreTabla: "DOCTORES"){
                     //crearDoctores()
                     consultarDoctores()
                 }
@@ -192,15 +194,15 @@ class ViewController3: UIViewController, UITextFieldDelegate{
                 }
                 else{
                     print("No se puede crear la pacientes")
-                }
+                }*/
             }
             else{
                 print("Error al abrir BD")
             }
             sqlite3_close(baseDatos)
-            preferencias.set("iniciado", forKey: "true")
-            preferencias.synchronize()
-        }
+            //preferencias.set("iniciado", forKey: "true")
+            //preferencias.synchronize()
+       // }
         
         let keyChain = DataService().keyChain
         
@@ -312,6 +314,25 @@ class ViewController3: UIViewController, UITextFieldDelegate{
      }
      }*/
     
+    func sacarID(_ email: String){
+        if abrirBaseDatos(){
+            print("ok")
+            //print(email)
+            let sqlConsulta = "SELECT NOMINA FROM DOCTORES WHERE EMAIL = '\(email)'"
+            var declaracion: OpaquePointer? = nil
+            if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+                while sqlite3_step(declaracion) == SQLITE_ROW {
+                    appDelegate.idDoctor  = String.init(cString: sqlite3_column_text(declaracion, 0))
+                    print(appDelegate.idDoctor)
+                }
+            }
+        } else{
+            print("Error al abrir BD")
+        }
+        sqlite3_close(baseDatos)
+        
+    }
+    
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         
         //Validation Email and Password
@@ -330,6 +351,7 @@ class ViewController3: UIViewController, UITextFieldDelegate{
                         //code
                         if let u = user{
                             //User found
+                            self.sacarID(self.emailField.text!)
                             self.performSegue(withIdentifier: "goToHome", sender: self)
                         }
                         else{
