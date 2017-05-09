@@ -51,7 +51,7 @@ class ContactoPac: UIViewController{
                 let edad = String.init(cString: sqlite3_column_text(declaracion, 3))
                 let fechaN = String.init(cString: sqlite3_column_text(declaracion, 4))
                 let direccion = String.init(cString: sqlite3_column_text(declaracion, 5))
-                let telefono = String.init(cString: sqlite3_column_text(declaracion, 5))
+                let telefono = String.init(cString: sqlite3_column_text(declaracion, 6))
                 print("\(id), \(nombre), \(sexo), \(edad), \(fechaN), \(direccion)", "\(telefono)")
                 nombreTF.text = "\(nombre)"
                 sexoTF.text = "\(sexo)"
