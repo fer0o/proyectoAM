@@ -185,30 +185,28 @@ class Registro: UIViewController{
         else{
             print("Registro Exitoso")
             appDelegate.idDoctor = id.text!
+            //Register the user with the Firebase
+            if let email = emailField.text, let pass = passwordField.text {
+                FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
+                    if let u = user {
+                        //User is found, go to home screen
+                        
+                        print("Registro exitoso.")
+                        //self.performSegue(withIdentifier: "goToHome", sender: self)
+                    }
+                    else{
+                        //Error: check error and show message.
+                        //self.createAlertRegister()
+                    }
+                })
+            }
+            self.createAlertRegisterSuccessful()
         }
         
     } else{
             print("Error al abrir BD")
         }
         sqlite3_close(baseDatos)
-        //Register the user with the Firebase
-        if let email = emailField.text, let pass = passwordField.text {
-            FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
-                if let u = user {
-                    //User is found, go to home screen
-                    
-                    print("Registro exitoso.")
-                    //self.performSegue(withIdentifier: "goToHome", sender: self)
-                }
-                else{
-                    //Error: check error and show message.
-                    //self.createAlertRegister()
-                }
-            })
-        }
-        
-        self.createAlertRegisterSuccessful()
-        
             
             /*let sqlInserta = "INSERT INTO EMPLEADOS (NOMINA, NOMBRE, SALARIO) " + "VALUES ('\(nomina.text!)', '\(Nombre.text!)', \(especialidad.text!))"
             //'\(nomina)', '\(nombre)', '\(especialidad)', '\(escuela)', \(cedula), '\(telefono)'

@@ -7,96 +7,41 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class RegistroPaciente: UIViewController{
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet var id: UITextField!
     
-    @IBOutlet var Nombre: UITextField!
+    @IBOutlet var nombre: UITextField!
     
-    @IBOutlet var Apellido: UITextField!
+    @IBOutlet var sexo: UITextField!
     
-    @IBOutlet var Edad: UITextField!
+    @IBOutlet var edad: UITextField!
     
-    @IBOutlet var Sexo: UITextField!
+    @IBOutlet var nacimiento: UITextField!
     
-    @IBOutlet var Telefono: UITextField!
+    @IBOutlet var direccion: UITextField!
     
-    @IBOutlet var Correo: UITextField!
+    @IBOutlet var telefono: UITextField!
+    
+    @IBOutlet var emailField: UITextField!
+    
+    @IBOutlet var passwordField: UITextField!
     
     var baseDatos: OpaquePointer? = nil
+    
+    var databasePath = String()
     
     @IBAction func generateRandom(_ sender: Any) {
         let n = Int(arc4random_uniform(10000))
         //let n = Int(arc4random_uniform(0-10000)+10000)
         //let a = Int(arc4random(0 - 10000)+10000)
-        id.text = "D\(n)"
-    }
-    
-    @IBAction func botonRegistrar(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        
-        if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Sexo.text == "" || Telefono.text == "" || Correo.text == ""){
-            createAlertRegisterFailedPatient()
-        }
-        if(Nombre.text == "" && Apellido.text == "" && Edad.text == "" && Sexo.text == "" && Telefono.text == "" && Correo.text == ""){
-            //  loadDefaults()
-            createAlertRegisterFailedPatient()
-            //botonClear.setTitle("Limpiar Registro", forState: .Normal)
-        }
-        else {
-            
-            defaults.set(Nombre.text, forKey: "Nombre")
-            defaults.set(Apellido.text, forKey: "Apellido")
-            defaults.set(Edad.text, forKey: "Edad")
-            defaults.set(Sexo.text, forKey: "Sexo")
-            defaults.set(Telefono.text, forKey: "Telefono")
-            defaults.set(Correo.text, forKey: "Correo")
-            defaults.synchronize()
-            
-            print("Nombre = \(Nombre.text!)")
-            print("Apellido = \(Apellido.text!)")
-            print("Edad = \(Edad.text!)")
-            print("Sexo = \(Sexo.text!)")
-            print("Telefono = \(Telefono.text!)")
-            print("Correo = \(Correo.text!)")
-        }
-    }
-    
-    func createAlertRegisterFailedPatient(){
-        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Existen campos vacíos para registrarse.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
-            alertaInicio.dismiss(animated:true, completion: nil)
-        }))
-        self.present(alertaInicio, animated: true, completion: nil)
-    }
-    
-    @IBAction func botonClear(_ sender: Any) {
-        //if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Sexo.text == "" || Telefono.text == "" || Correo.text == ""){
-        //  loadDefaults()
-        //botonClear.setTitle("Limpiar Registro", forState: .Normal)
-        //}
-        //else {
-        Nombre.text = ""
-        Apellido.text = ""
-        Edad.text = ""
-        Sexo.text = ""
-        Telefono.text = ""
-        Correo.text = ""
-        //botonClear.setTitle("Limpiar Registro", forState: .Normal)
-        //}
-    }
-    
-    
-    func loadDefaults() {
-        let defaults = UserDefaults.standard
-        Nombre.text = defaults.object(forKey: "Nombre") as? String
-        Apellido.text = defaults.object(forKey: "Apellido") as? String
-        Edad.text = defaults.object(forKey: "Edad") as? String
-        Sexo.text = defaults.object(forKey: "Sexo") as? String
-        Telefono.text = defaults.object(forKey: "Telefono") as? String
-        Correo.text = defaults.object(forKey: "Correo") as? String
+        id.text = "P\(n)"
     }
     
     // MARK: - Funciones de la BD
@@ -119,10 +64,12 @@ class RegistroPaciente: UIViewController{
         return nil
     }
     
-    func crearTablaDoctores(nombreTabla: String) -> Bool {
-        let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(NOMINA TEXT PRIMARY KEY, NOMBRE TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT)"
+    //SOLO PARA CREAR TABLA DE PACIENTES SI NO EXISTE
+    /*func crearTablaPacientes(nombreTabla: String) -> Bool {
+        let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(ID TEXT PRIMARY KEY, NOMBRE TEXT, SEXO TEXT, EDAD DECIMAL, FECHANACIMIENTO TEXTO, DIRECCION TEXT, TELEFONO TEXT, CORREO TEXT, PASS TEXT, HISTORIAL TEXT)"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
+            
             return true
         } else {
             sqlite3_close(baseDatos)
@@ -130,15 +77,165 @@ class RegistroPaciente: UIViewController{
             print("Error: \(msg)")
             return false
         }
-    }
+    }*/
+
     
-    func insertarDoctor(_ nomina: String, _ nombre: String, _ especialidad: String, _ escuela:String, _ cedula: Int, _ telefono: String) {
-        let sqlInserta = "INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, ESCUELA, CEDULA, TELEFONO) "
-            + "VALUES ('\(nomina)', '\(nombre)', '\(especialidad)', '\(escuela)', \(cedula), '\(telefono)')"
-        var error: UnsafeMutablePointer<Int8>? = nil
-        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK { print("Error al insertar doctor")
+    func checkFields1(){
+        if(id.text == "" || nombre.text == "" || sexo.text == "" || edad.text == "" || nacimiento.text == "" || direccion.text == "" || telefono.text == "" || emailField.text == "" || passwordField.text == ""){
+            createAlertRegisterFailedPatient()
+        }
+        
+        if(id.text == "" && nombre.text == "" && sexo.text == "" && edad.text == "" && nacimiento.text == "" && direccion.text == "" && telefono.text == "" && emailField.text == "" && passwordField.text == ""){
+            //  loadDefaults()
+            createAlertRegisterFailedPatient()
+            //botonClear.setTitle("Limpiar Registro", forState: .Normal)
         }
     }
+    
+    
+    @IBAction func botonRegistrar(_ sender: Any) {
+        //let defaults = UserDefaults.standard
+        checkFields1()
+        
+    if abrirBaseDatos(){
+            print("ok")
+        
+        let sqlInserta = "INSERT INTO PACIENTES (ID, NOMBRE, SEXO, EDAD, FECHANACIMIENTO, DIRECCION, TELEFONO, CORREO, CONTRASEÑA, HISTORIAL) " + "VALUES ('\(id.text!)', '\(nombre.text!)', '\(sexo.text!)', '\(edad.text!)', '\(nacimiento.text!)', '\(direccion.text!)', '\(telefono.text!)', '\(emailField.text!)', '\(passwordField.text!)', 'NULL')"
+        var error: UnsafeMutablePointer<Int8>? = nil
+        if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK {
+            print("Error al insertar datos")
+            print(error as Any)
+            print(sqlInserta)
+        }
+        else{
+            print("Registro Exitoso")
+            appDelegate.idDoctor = id.text!
+            if let email = emailField.text, let pass = passwordField.text {
+                FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
+                    if let u = user {
+                        //User is found, go to home screen
+                        
+                        print("Registro exitoso.")
+                        //self.performSegue(withIdentifier: "goToHome", sender: self)
+                    }
+                    else{
+                        //Error: check error and show message.
+                        //self.createAlertRegister()
+                    }
+                })
+            }
+            
+            self.createAlertRegisterSuccessful()
+        }
+        
+    } else{
+        print("Error al abrir BD")
+        }
+        sqlite3_close(baseDatos)
+
+
+        
+        //else {
+            
+            /*defaults.set(id.text, forKey: "ID")
+            defaults.set(nombre.text, forKey: "Nombre")
+            defaults.set(Apellido.text, forKey: "Apellido")
+            defaults.set(Edad.text, forKey: "Edad")
+            defaults.set(Sexo.text, forKey: "Sexo")
+            defaults.set(Telefono.text, forKey: "Telefono")
+            defaults.set(Correo.text, forKey: "Correo")
+            defaults.synchronize()
+            
+            print("Nombre = \(Nombre.text!)")
+            print("Apellido = \(Apellido.text!)")
+            print("Edad = \(Edad.text!)")
+            print("Sexo = \(Sexo.text!)")
+            print("Telefono = \(Telefono.text!)")
+            print("Correo = \(Correo.text!)")*/
+        //}
+        
+    }
+    
+    func createAlertRegisterFailedPatient(){
+        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Existen campos vacíos para registrarse.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaInicio.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaInicio, animated: true, completion: nil)
+    }
+    
+    func createAlertRegisterSuccessful(){
+        let alertaInicio  = UIAlertController(title: "Registro Exitoso", message: "Tu registro está completo, por favor inicia sesión.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //alerta.addAction(UIAlertAction(title:"OK", style: UIAlertActionStyle.default, handler:  { action in self.performSegue(withIdentifier: "returnLoginDoctor", sender: self)})
+        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            //alertaInicio.performSegue(withIdentifier: "returnLoginDoctor", sender: self)
+            //("returnLoginDoctor", animated: self)
+            alertaInicio.dismiss(animated:true, completion: nil)
+        }))
+        
+        //self.present("returnLoginDoctor", animated: self)
+        self.present(alertaInicio, animated: true, completion: nil)
+    }
+    
+    func createAlertRegisterFailed(){
+        let alertaInicio  = UIAlertController(title: "Intenta de nuevo", message: "Existen campos vacíos para registrarse.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertaInicio.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alertaInicio.dismiss(animated:true, completion: nil)
+        }))
+        self.present(alertaInicio, animated: true, completion: nil)
+    }
+    
+    @IBAction func botonClear(_ sender: Any) {
+        //if(Nombre.text == "" || Apellido.text == "" || Edad.text == "" || Sexo.text == "" || Telefono.text == "" || Correo.text == ""){
+        //  loadDefaults()
+        //botonClear.setTitle("Limpiar Registro", forState: .Normal)
+        //}
+        //else {
+        id.text = ""
+        nombre.text = ""
+        sexo.text = ""
+        edad.text = ""
+        nacimiento.text = ""
+        direccion.text = ""
+        telefono.text = ""
+        emailField.text = ""
+        passwordField.text = ""
+        
+        //botonClear.setTitle("Limpiar Registro", forState: .Normal)
+        //}
+    }
+    
+    func consultarPaciente(){
+        let sqlConsulta = "SELECT * FROM PACIENTES"
+        var declaracion: OpaquePointer? = nil
+        if sqlite3_prepare_v2(baseDatos, sqlConsulta, -1, &declaracion, nil) == SQLITE_OK {
+            while sqlite3_step(declaracion) == SQLITE_ROW {
+                let id = String.init(cString: sqlite3_column_text(declaracion, 0))
+                let sexo = String.init(cString: sqlite3_column_text(declaracion, 1))
+                let edad = String.init(cString: sqlite3_column_text(declaracion, 2))
+                let nacimiento = String.init(cString: sqlite3_column_text(declaracion, 3))
+                let direccion = String.init(cString: sqlite3_column_text(declaracion, 4))
+                let telefono = String.init(cString: sqlite3_column_text(declaracion, 5))
+                let correo = String.init(cString: sqlite3_column_text(declaracion, 6))
+                let pass = String.init(cString: sqlite3_column_text(declaracion, 7))
+                let historial = String.init(cString: sqlite3_column_text(declaracion, 8))
+                print("\(id), \(sexo), \(edad), \(nacimiento), \(direccion), \(telefono), \(correo), \(pass), \(historial)")
+            }
+        }
+    }
+    
+    /*func loadDefaults() {
+        let defaults = UserDefaults.standard
+        Nombre.text = defaults.object(forKey: "Nombre") as? String
+        Apellido.text = defaults.object(forKey: "Apellido") as? String
+        Edad.text = defaults.object(forKey: "Edad") as? String
+        Sexo.text = defaults.object(forKey: "Sexo") as? String
+        Telefono.text = defaults.object(forKey: "Telefono") as? String
+        Correo.text = defaults.object(forKey: "Correo") as? String
+    }*/
     
     func consultarDoctores(){
         let sqlConsulta = "SELECT * FROM DOCTORES"
@@ -158,7 +255,7 @@ class RegistroPaciente: UIViewController{
     
     //SOLO PARA CREAR TABLA DE PACIENTES SI NO EXISTE
     func crearTablaPacientes(nombreTabla: String) -> Bool {
-        let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(ID TEXT PRIMARY KEY, NOMBRE TEXT, SEXO TEXT, EDAD DECIMAL, FECHANACIMIENTO TEXTO, DIRECCION TEXT, TELEFONO TEXT, HISTORIAL TEXT)"
+        let sqlCreaTabla = "CREATE TABLE IF NOT EXISTS \(nombreTabla)" + "(ID TEXT PRIMARY KEY, NOMBRE TEXT, SEXO TEXT, EDAD DECIMAL, FECHANACIMIENTO TEXTO, DIRECCION TEXT, TELEFONO TEXT, CORREO TEXT, CONTRASEÑA TEXT, HISTORIAL TEXT)"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlCreaTabla, nil, nil, &error) == SQLITE_OK {
             return true
@@ -174,39 +271,37 @@ class RegistroPaciente: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
         //let sqlCreaTabla = "CREATE TABLE DOCTORES" + "(NOMINA TEXT, ESPECIALIDAD TEXT, ESCUELA TEXT, CEDULA DECIMAL, TELEFONO TEXT, PRIMARY KEY(NOMINA))"/* INSERT INTO DOCTORES (NOMINA, NOMBRE, ESPECIALIDAD, UNIVERSIDAD, CEDULA, TELEFONO) VALUES ('','','','','','')"*/
         
         //esta funcion se ejecuta luego luego que incia la aplicacion y crea la base de datos, aunque ya existe solo la instancia de nuevo cargando los datos anteriores
-        let preferencias = UserDefaults.standard
-        preferencias.synchronize()
-        if let flag = preferencias.string(forKey: "true"){
-            print("Ya existe BD")
-        } else{
+        //let preferencias = UserDefaults.standard
+        //preferencias.synchronize()
+        //if let flag = preferencias.string(forKey: "true"){
+        //    print("Ya existe BD")
+        //} else{
             if abrirBaseDatos(){
                 print("ok")
                 //consultarBaseDatos()
-                if crearTablaDoctores(nombreTabla: "DOCTORES"){
+                //if crearTablaDoctores(nombreTabla: "DOCTORES"){
                     //crearDoctores()
-                    consultarDoctores()
-                }
-                else{
-                    print("No se puede crear la doctores")
-                }
-                if crearTablaPacientes(nombreTabla: "PACIENTES"){
+                //    consultarDoctores()
+                //}
+                //else{
+                //    print("No se puede crear la doctores")
+                //}
+                //if crearTablaPacientes(nombreTabla: "PACIENTES"){
                     //insertarPaciente()
-                }
-                else{
-                    print("No se puede crear la pacientes")
-                }
+                //}
+                //else{
+                //    print("No se puede crear la pacientes")
+                //}
             } else{
                 print("Error al abrir BD")
             }
             sqlite3_close(baseDatos)
-            preferencias.set("iniciado", forKey: "true")
-            preferencias.synchronize()
-        }
+            //preferencias.set("iniciado", forKey: "true")
+            //preferencias.synchronize()
+        //}
     }
     
     override func didReceiveMemoryWarning() {

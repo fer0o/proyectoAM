@@ -128,6 +128,7 @@ class CitasSinPac: UIViewController, UITableViewDelegate, UITableViewDataSource{
         nominas.removeAll()
         especialidades.removeAll()
         fechas.removeAll()
+        print(appDelegate.idPaciente)
         if abrirBaseDatos(){
             print("ok")
             consultarBaseDatos()

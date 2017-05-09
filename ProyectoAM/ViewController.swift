@@ -123,12 +123,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    func insertarPaciente() {
+    /*func insertarPaciente() {
         let sqlInserta = "INSERT INTO PACIENTES (ID, NOMBRE, SEXO, EDAD, FECHANACIMIENTO, DIRECCION, TELEFONO, HISTORIAL) " + "VALUES ('P01111111', 'Ana Duarte Gomez', 'Mujer', '19', '21/08/1998', 'Doctores 101, Satelite, Edo. Mex', '55-1452-5696', 'ana@hotmail.com', 'perritosbonitos', 'NULL')"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, sqlInserta, nil, nil, &error) != SQLITE_OK { print("Error al insertar datos")
         }
-    }
+    }*/
     
     func consultarPaciente(){
         let sqlConsulta = "SELECT * FROM PACIENTES"
@@ -186,7 +186,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
                     print("No se puede crear la doctores")
                 }
                 if crearTablaPacientes(nombreTabla: "PACIENTES"){
-                    insertarPaciente()
+                    //insertarPaciente()
                 }
                 else{
                     print("No se puede crear la pacientes")
