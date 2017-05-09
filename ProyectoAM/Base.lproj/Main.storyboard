@@ -2431,6 +2431,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ScrollView" destination="eCe-o4-Cex" id="uPS-rY-uG2"/>
                         <outlet property="direccion" destination="tfW-sE-GeU" id="a6p-1L-878"/>
                         <outlet property="edad" destination="2Tx-1J-Ffq" id="cMP-5a-gF0"/>
                         <outlet property="emailField" destination="JLC-JE-Ody" id="LuI-Wm-exu"/>
