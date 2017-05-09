@@ -34,6 +34,8 @@ class Registro: UIViewController{
     
     @IBOutlet var passwordField: UITextField!
     
+    @IBOutlet weak var ScrollView: UIScrollView!
+    
     @IBAction func generateRandom(_ sender: Any) {
         let n = Int(arc4random_uniform(10000))
         //let n = Int(arc4random_uniform(0-10000)+10000)
@@ -344,7 +346,65 @@ class Registro: UIViewController{
             //preferencias.set("iniciado", forKey: "true")
             //preferencias.synchronize()
         //}
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
     }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterKeyboardNotifications()
+    }
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ViewController.keyboardDidShow(notification:)),
+                                               name: NSNotification.Name.UIKeyboardDidShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ViewController.keyboardWillHide(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardDidShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        ScrollView.contentInset = contentInsets
+        ScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        ScrollView.contentInset = UIEdgeInsets.zero
+        ScrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
