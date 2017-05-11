@@ -81,7 +81,7 @@ class CitasSinD: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let query = "DELETE FROM CITAS WHERE DOCTORID = '\(appDelegate.idDoctor)' AND PACIENTEID = '\(ids[row])' AND FECHA = '\(fechas[row])'"
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(baseDatos, query, nil, nil, &error) == SQLITE_OK {
-            let alertaCorrecto = UIAlertController(title: "Cancelado", message: "La cita a sido cancelada, se avisara al paciente", preferredStyle: .alert)
+            let alertaCorrecto = UIAlertController(title: "Cancelado", message: "La cita a sido cancelada, se avisará al paciente", preferredStyle: .alert)
             let btnAceptar = UIAlertAction(title:"Aceptar", style: .default, handler: nil)
             alertaCorrecto.addAction(btnAceptar)
             present(alertaCorrecto, animated: true, completion: nil)

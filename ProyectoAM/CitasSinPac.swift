@@ -21,7 +21,7 @@ class CitasSinPac: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         consultarDoc(nominas[indexPath.row])
-        let alertaMal = UIAlertController(title: "Cita aun no aceptada", message: "Contacto: Dr. \(doctor) - \(tel)", preferredStyle: .alert)
+        let alertaMal = UIAlertController(title: "Cita aún no aceptada", message: "Contacto: Dr. \(doctor) - \(tel)", preferredStyle: .alert)
         let btnAceptar = UIAlertAction(title:"Aceptar", style: .default, handler: nil)
         alertaMal.addAction(btnAceptar)
         present(alertaMal, animated: true, completion: nil)

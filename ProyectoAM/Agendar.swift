@@ -330,7 +330,7 @@ class Agendar: UIViewController, UITableViewDelegate, UITableViewDataSource {
             present(alertaMal, animated: true, completion: nil)
         }
         else{
-            let alertaBien = UIAlertController(title: "Cita agendada", message: "La cita fue guardada con exito", preferredStyle: .alert)
+            let alertaBien = UIAlertController(title: "Cita agendada", message: "La cita fue guardada con éxito", preferredStyle: .alert)
             let btnAceptar = UIAlertAction(title:"Aceptar", style: .default, handler: nil)
             alertaBien.addAction(btnAceptar)
             present(alertaBien, animated: true, completion: nil)
