@@ -18,7 +18,7 @@ class SignOutCode: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+
     @IBAction func cerrarSesionPaciente(_ sender: Any) {
         let firebaseAuth = FIRAuth.auth()
         do{
@@ -33,8 +33,7 @@ class SignOutCode: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
-    @IBAction func cerrarSesion(_ sender: Any) {
+    @IBAction func cerrarSesionDoctor(_ sender: Any) {
         let firebaseAuth = FIRAuth.auth()
         do{
             try firebaseAuth?.signOut()
@@ -46,7 +45,10 @@ class SignOutCode: UIViewController {
         DataService().keyChain.delete("uid")
         //KeychainSwift().delete("uid")
         dismiss(animated: true, completion: nil)
+
     }
+    
+    
     /*@IBAction func SignOut (_ sender: Any){
         let firebaseAuth = FIRAuth.auth()
         do{
