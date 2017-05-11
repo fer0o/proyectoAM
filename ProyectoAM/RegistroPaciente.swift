@@ -35,7 +35,6 @@ class RegistroPaciente: UIViewController{
     
     @IBOutlet weak var ScrollView: UIScrollView!
     
-    
     var baseDatos: OpaquePointer? = nil
     
     var databasePath = String()
